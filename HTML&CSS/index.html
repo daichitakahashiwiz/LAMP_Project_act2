@@ -1,5 +1,5 @@
 <!--
-Au<!--
+Au<!-
 Author: W3layouts
 Author URL: http://w3layouts.com
 License: Creative Commons Attribution 3.0 Unported
@@ -56,6 +56,21 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	<script type="text/javascript">
 		jQuery(function ($) {
 			$(".swipebox").swipebox();
+		});
+	</script>
+
+
+	<!-- css,jsの呼び出し(朱里追加) -->
+	<link href="css/import.css" rel="stylesheet" type="text/css" media="all" />
+	<script type="text/javascript" src="js/app.js"></script>
+	<!-- Font Awesome (朱里のkit) -->
+	<script src="https://kit.fontawesome.com/a1bcba65a0.js"></script>
+	<!-- HTMLの呼び出し(朱里追加) -->
+	<script>
+		$(function () {
+			// $("#header").load("html/include/header.html");
+			// $("#main").load("html/main.html");
+			$("#footer").load("./html/include/footer.html");
 		});
 	</script>
 
@@ -318,6 +333,11 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			</section>
 		</table>	
 	</div>
+
+	<footer id="footer"></footer>
+
+
+
 </body>
 
 </html>
