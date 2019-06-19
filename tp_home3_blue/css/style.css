@@ -52,14 +52,17 @@ header {
 }
 header .inner {
 	position: relative;
-	height: 140px;	/*ヘッダーの高さ*/
+	height: 140px;		/*ヘッダーの高さ*/
+}
+ul.inner{
+	height: 0px;
 }
 /*ロゴ画像*/
 header #logo img {
 	width: 350px;	/*画像幅*/
 	position: absolute;
-	left: 3%;		/*ヘッダーに対して左から3%の場所に配置*/
-	top: 38px;	/*ヘッダーに対して上から38pxの場所に配置*/
+	left: 3%; /*ヘッダーに対して左から3%の場所に配置*/
+	top: 20px;	/*ヘッダーに対して上から38pxの場所に配置*/
 }
 
 /*文字サイズ変更ボタン（※文字サイズを「大」にした時の設定はchange.cssで行う）
