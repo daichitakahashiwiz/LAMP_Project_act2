@@ -1,3 +1,7 @@
+@charset "utf-8";
+/*——————————————————————————————————
+    fontAwsemeの設定
+——————————————————————————————————*/
 .fa-facebook-f{
     color: #315096;
 }
@@ -17,7 +21,6 @@
 .fa-instagram{
     color: #FF615F;
 }
-
 
 .hover{
     color: white;
