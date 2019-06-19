@@ -434,7 +434,7 @@ header #logo img {
 footer {
 	clear: both;
 	font-size: 85%;	/*文字サイズ*/
-	background: #2b3f7f;	/*背景色*/
+	background: #2b3f7f;
 	color: #fff;	/*文字色*/
 }
 footer a {

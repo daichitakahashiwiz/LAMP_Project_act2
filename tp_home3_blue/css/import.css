@@ -1,0 +1,11 @@
+@charset "utf-8";
+/*——————————————————————————————————
+    cssファイルを読み込む
+——————————————————————————————————*/
+
+@import "style.css";
+/* @import "slide.css"; */
+/* @import "change.css"; */
+@import "fontAwesome.css";
+@import "reset.css";
+
