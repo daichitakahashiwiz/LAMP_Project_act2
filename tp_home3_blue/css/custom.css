@@ -1,0 +1,8 @@
+@charset "utf-8";
+
+.logo{
+        /* 中央表示 */
+	/* top: 50%;
+	left: 50%;
+    transform: translate(-50%, -50%); 要素に2D変形、または、3D変形を適用する */
+}
