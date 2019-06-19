@@ -52,7 +52,7 @@ header {
 }
 header .inner {
 	position: relative;
-	height: 140px;	/*ヘッダーの高さ*/
+	height: 140px;		/*ヘッダーの高さ*/
 }
 /*ロゴ画像*/
 header #logo img {
