@@ -6,3 +6,8 @@
 	left: 50%;
     transform: translate(-50%, -50%); 要素に2D変形、または、3D変形を適用する */
 }
+
+
+.d-block{
+    min-height: 700px;
+}
