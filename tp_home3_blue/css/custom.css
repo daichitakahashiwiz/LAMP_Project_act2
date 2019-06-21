@@ -17,4 +17,14 @@
 ——————————————————————————————————*/
 .buttonlist{
     text-align: center;
+    margin-bottom: 50px;
 }
+.btn-blue{
+    font-family:"游明朝","Yu Mincho";
+    border-color: #93959c;
+    padding: 15px 70px;
+}
+.btn-blue:hover, .btn-blue:focus {
+    background:#2b3f7f;
+    color: #fff;
+  }
