@@ -1,13 +1,49 @@
 @charset "utf-8";
 
-.logo{
-        /* 中央表示 */
-	/* top: 50%;
-	left: 50%;
-    transform: translate(-50%, -50%); 要素に2D変形、または、3D変形を適用する */
-}
+/*——————————————————————————————————
+    自分で変更したやつ
+——————————————————————————————————*/
 
 
+/* スライダーの画像
+—————————————————————————————————— */
 .d-block{
     min-height: 700px;
 }
+
+
+/* ユーザーページメニューバー固定
+—————————————————————————————————— */
+.main-content{
+	height:2000px;
+}
+/* 固定するメニューバー */
+#usermenubar{
+	top:0px;
+	position: -webkit-sticky;
+	position: sticky;
+}
+/* 左の青いやつ */
+#usermenubar h2{
+	border-left: 3px solid #2b3f7f;
+}
+/* 右コンテナの横幅 */
+.user .inner{
+	width: 1000px;
+}
+/* 背景と外枠をなくす */
+.usermenubar .box1{
+	background: white;
+	border: solid 0px;
+}
+/* 立幅調節 */
+.usermenubar a{
+	height: 60px;
+	line-height: 50px;
+}
+/* メニューバーの上ちょっと調節 */
+.usermenubar .sub h2{
+	margin-top: 5px;
+}
+
+
