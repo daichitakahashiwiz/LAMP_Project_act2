@@ -198,7 +198,8 @@ header #logo img {
 	width: 100%;
 }
 #menubar ul.ddmenu li a {
-	width: 100%;border: none;
+	width: 100%;
+	border: none;
 	background: #4c4c4c;	/*背景色（古いブラウザ用）*/
 	background: rgba(0,0,0,0.7);	/*背景グラデーション。0,0,0は黒の事で0.7は透明度70%の事。*/
 	color: #fff;	/*文字色*/

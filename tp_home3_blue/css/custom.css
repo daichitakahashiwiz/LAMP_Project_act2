@@ -15,7 +15,7 @@
 /* ユーザーページメニューバー固定
 —————————————————————————————————— */
 .main-content{
-	height:2000px;
+	/* height:2000px; */
 }
 /* 固定するメニューバー */
 #usermenubar{
@@ -47,3 +47,45 @@
 }
 
 
+/* 退会ページ
+—————————————————————————————————— */
+.list.unsubscribe{
+	text-align: center;
+}
+p.warning{
+	background-color: #FEF2F2;
+}
+/* p{
+	margin-bottom: 2rem;
+} */
+
+.unsubscribe .c3 .list p{
+	height: auto;
+}
+
+/* ボタン */
+#headermen {
+	/* position: absolute;
+	right: 3%;		
+	/*header のinnerに対して右から3%の場所に配置
+	bottom: 15px; */
+}
+#headermen li  a{
+	text-decoration: none;
+	display: inline-block;
+	background: #2b3f7f;	/*背景色（古いブラウザ用）*/
+	background: linear-gradient(#324992, #2b3f7f);	/*グラデーション*/
+	color: #FFF;	/*文字色*/
+	padding: 0px 15px;	/*上下、左右へのボックス内の余白*/
+	border-radius: 4px;	/*角丸のサイズ*/
+	border: 1px solid #2b3f7f;	/*枠線の幅、線種、色*/
+}
+/*マウスオン時*/
+#headermen li a:hover {
+	color: #2b3f7f;	/*文字色*/
+	background: #fff;	/*背景色*/
+}
+
+.unsubscribe .list a::before {
+	display: none;
+}
