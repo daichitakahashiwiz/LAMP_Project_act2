@@ -55,22 +55,12 @@
 p.warning{
 	background-color: #FEF2F2;
 }
-/* p{
-	margin-bottom: 2rem;
-} */
-
 .unsubscribe .c3 .list p{
 	height: auto;
 }
 
-/* ボタン */
-#headermen {
-	/* position: absolute;
-	right: 3%;		
-	/*header のinnerに対して右から3%の場所に配置
-	bottom: 15px; */
-}
-#headermen li  a{
+/* ボタンhedderコピペ色変えただけ　雑み */
+#ubutton li a{
 	text-decoration: none;
 	display: inline-block;
 	background: #2b3f7f;	/*背景色（古いブラウザ用）*/
@@ -81,11 +71,21 @@ p.warning{
 	border: 1px solid #2b3f7f;	/*枠線の幅、線種、色*/
 }
 /*マウスオン時*/
-#headermen li a:hover {
+#ubutton li a:hover {
 	color: #2b3f7f;	/*文字色*/
 	background: #fff;	/*背景色*/
 }
 
-.unsubscribe .list a::before {
+/*listの中にリンクつけると出てくる〇➡削除*/
+.unsubscribe .list a::before,
+.unsubscribedone.list a::before {
 	display: none;
 }
+.usermenubar a{
+	height: auto;
+}
+
+
+
+
+
