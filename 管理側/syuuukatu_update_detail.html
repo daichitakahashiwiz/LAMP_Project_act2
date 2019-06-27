@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 
 <!--設定 or CSS-->
@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-    <title>～猪狩典礼～ 管理者 トップページ</title>
+    <title>～猪狩典礼～ 管理者 新規従業員作成</title>
     <!-- Favicon-->
     <link rel="icon" href="favicon.ico" type="image/x-icon">
 
@@ -301,13 +301,12 @@
                 <ul class="list">
                     <li class="header">管理者メニュー</li>
                     <!--メニューバーの色付け-->
-                    <li class="active">
                         <a href="javascript:void(0);" class="menu-toggle">
                             <i class="material-icons">view_list</i>
                             <span>ユーザー一覧</span>
                         </a>
                         <ul class="ml-menu">
-                            <li class="active">
+                            <li>
                             <!--pages/ui/alerts.html-->
                                 <a href="index.html">ユーザーID</a>
                             </li>
@@ -315,47 +314,34 @@
                                 <a href="animations.html">プラン詳細</a>
                             </li>
                             <li>
-                                <a href="badges.html">チャット</a>
+                                <a href="badges.html">割当従業員</a>
                             </li>
 
                             <li>
-                                <a href="breadcrumbs.html">ユーザ情報</a>
+                                <a href="breadcrumbs.html">アカウント情報</a>
+                            </li>
+                            <li>
+                                <a href="buttons.html">アカウント変更</a>
                             </li>
                         </ul>
-                    </li>
                     <li>
                         <a href="javascript:void(0);" class="menu-toggle">
                             <i class="material-icons">assignment</i>
-                            <span>ページ変更</span>
+                            <span>従業員一覧</span>
                         </a>
                         <ul class="ml-menu">
                             <li>
-                                <a href="basic-form-elements.html">よくある質問変更</a>
+                                <a href="basic-form-elements.html">従業員ID</a>
                             </li>
                             <li>
-                                <a href="basic-form-elements.html">よくある質問変更</a>
+                                <a href="advanced-form-elements.html">アカウント情報</a>
                             </li>
                             <li>
-                                <a href="basic-form-elements.html">よくある質問変更</a>
-                            </li>
-                            <li>
-                                <a href="basic-form-elements.html">よくある質問変更</a>
-                            </li>
-                            <li>
-                                <a href="advanced-form-elements.html">終活の知識変更</a>
-                            </li>
-                            <li>
-                                <a href="advanced-form-elements.html">終活の知識変更</a>
-                            </li>
-                            <li>
-                                <a href="advanced-form-elements.html">終活の知識変更</a>
-                            </li>
-                            <li>
-                                <a href="advanced-form-elements.html">終活の知識変更</a>
+                                <a href="form-examples.html">アカウント変更</a>
                             </li>
                         </ul>
                     </li>
-                    <li>
+                    <li class="active">
                         <a href="changelogs.html">
                             <i class="material-icons">account_box</i>
                             <span>新規従業員作成</span>
@@ -543,9 +529,72 @@
 <!--ページ内容-->
     <section class="content">
         <div class="container-fluid">
+        <!--パンくずリスト-->
+        <!--
+            <div class="block-header">
+                <h2>
+                    <a href="index.html" style="text-decoration:none;">ユーザー一覧<a/>
+                    <a style="text-decoration:none;"><font color="black"> > </font><a/>
+                    <a href="index.html" style="text-decoration:none;">ユーザーID<a/>
+                </h2>
+            </div>
+        -->
+            <div class="row clearfix">
+                <div class="signup-box">
+                    <div class="card">
+                        <div class="header">
+                            <h2>
+                                終活の知識変更画面
+                            </h2>
+                            <ul class="header-dropdown m-r--5">
+                                <li class="dropdown">
+                                    <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                        <i class="material-icons">more_vert</i>
+                                    </a>
+                                    <ul class="dropdown-menu pull-right">
+                                        <li><a href="javascript:void(0);">Action</a></li>
+                                        <li><a href="javascript:void(0);">Another action</a></li>
+                                        <li><a href="javascript:void(0);">Something else here</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="body">
+                            <form id="sign_up" method="POST">
+                                <div class="input-group">
+                                    <span class="input-group-addon">
+                                        <i class="material-icons">主題</i>
+                                    </span>
+                                    <div class="form-line">
+                                        <input type="text" class="form-control" name="namesurname" placeholder="主題を入力してください" required autofocus>
+                                    </div>
+                                </div>
+                                <div class="input-group">
+                                    <span class="input-group-addon">
+                                        <i class="material-icons">本文</i>
+                                    </span>
+                                    <div class="form-line">
+                                        <textarea name="honbun" cols="120" rows="100" placeholder="本文を入力してください"></textarea>
+                                    </div>
+                                </div>
+                               
 
 
+                                <!-- <div class="form-group">
+                                    <input type="checkbox" name="terms" id="terms" class="filled-in chk-col-pink">
+                                    <label for="terms">I read and agree to the <a href="javascript:void(0);">terms of usage</a>.</label>
+                                </div> -->
 
+                                <button class="btn btn-block btn-lg bg-pink waves-effect" type="submit">変更を反映する</button>
+
+                                <div class="m-t-25 m-b--5 align-center">
+                                    <a href="sign-in.html">You already have a membership?</a>
+                                </div>
+                            </form>
+                        </div>
+                    
+                </div>
+            </div>
         </div>
     </section>
 
