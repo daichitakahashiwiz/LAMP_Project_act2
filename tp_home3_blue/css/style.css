@@ -19,7 +19,7 @@ body {
 	-webkit-text-size-adjust: none;
 }
 h1,h2,h3,h4,h5,p,ul,ol,li,dl,dt,dd,form,figure,form{margin: 0px;padding: 0px;font-size: 100%;font-weight: normal;}
-textarea,select,input[type="text"],input[type="checkbox"],input[type="radio"],input[type="button"],input[type="submit"]{font-size: 100%;}
+textarea,select,input[type="password"],input[type="text"],input[type="checkbox"],input[type="radio"],input[type="button"],input[type="submit"]{font-size: 100%;}
 h1,h2,h3,h4,#menubar,a {font-family:"游明朝","Yu Mincho","游明朝体","YuMincho","ヒラギノ明朝 Pro W3","Hiragino Mincho Pro";}
 ul {list-style-type: none;}
 ol {padding-left: 40px;padding-bottom: 15px;}

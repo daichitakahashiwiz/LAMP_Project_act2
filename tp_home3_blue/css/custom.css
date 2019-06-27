@@ -87,5 +87,14 @@ p.warning{
 
 
 
+/* パスワード変更画面
+—————————————————————————————————— */
+
+/* 目のことの位置調整 */
+.field-icon{
+	position: absolute;
+	top: 3.5px;
+	right: 25px;
+}
 
 

@@ -35,7 +35,8 @@
 		});
 	</script>
 	<style>
-		a.user,a.pass{
+		a.user,
+		a.pass {
 			background: #2b3f7f;
 			color: #fff;
 		}
@@ -55,92 +56,63 @@
 
 			<div class="col-10 main-content contents">
 				<div class="inner">
-					<!-------------------------------------
-
-						ここから右の青いとこだよ！！！！
-						青いのは2個上のdivタグのクラスの
-						bg-primaryを消すと白くなるよ！！！！！
-
-					--------------------------------------->
-
 					<section class="c3">
 						<h2>パスワード変更</h2>
 						<p>下記に入力し、「パスワードを変更する」ボタンをクリックしてください。</p>
 						<div class="container">
-							<div class="row">
-								<div class="col-3">
-									<b>現在のパスワード</b>
-								</div>
-								<div class="col-9">
-									<input type="password" placeholder="Password">
-									<span class="field-icon">
-									<i toggle="#password-field" class="fas fa-eye toggle-password"></i>
-									<!-- <i toggle="#password-field" class="mdi mdi-eye toggle-password"></i> -->
-									</span>
-								</div>
-							</div>
-							<div class="row">
-									<div class="col-3">
-										<b>現在のパスワード</b>
-									</div>
-									<div class="col-9">
-										<input type="password" placeholder="Password">
+
+							<form class="mx-5">
+								<div class="form-group row justify-content-center mb-5 border-bottom">
+									<label for="Password" class="col-sm-4 col-form-label mb-3">現在のパスワード</label>
+									<div class="col-sm-7 pass-box mb-3">
+										<input type="password" class="form-control" id="Password" placeholder="パスワード">
 										<span class="field-icon">
-										<i toggle="#password-field" class="fas fa-eye toggle-password"></i>
-										<!-- <i toggle="#password-field" class="mdi mdi-eye toggle-password"></i> -->
-										</span>
-									</div>
-								</div>
-								<div class="row">
-										<div class="col-3">
-											<b>現在のパスワード</b>
-										</div>
-										<div class="col-9">
-											<input type="password" placeholder="Password">
-											<span class="field-icon">
 											<i toggle="#password-field" class="fas fa-eye toggle-password"></i>
-											<!-- <i toggle="#password-field" class="mdi mdi-eye toggle-password"></i> -->
-											</span>
+										</span>
+										<div class="invalid-feedback">
+											現在のパスワードを入力してください
 										</div>
 									</div>
-
-
-									<!-- <form>
-										<input type="password" placeholder="Password">
+								</div>
+								<div class="form-group row justify-content-center mb-3">
+									<label for="Password" class="col-sm-4 col-form-label">新しいパスワード</label>
+									<div class="col-sm-7">
+										<input type="password" class="form-control" id="Password" placeholder="パスワード">
 										<span class="field-icon">
-											<i class="fas fa-eye"></i>
-											<!-- <i toggle="password-field" class="mdi mdi-eye toggle-password"></i> --
+											<i toggle="#password-field" class="fas fa-eye toggle-password"></i>
 										</span>
-									</form> -->
+									</div>
+								</div>
+								<div class="form-group row justify-content-center mb-3">
+									<label for="Password" class="col-sm-4 col-form-label">新しいパスワード・確認</label>
+									<div class="col-sm-7">
+										<input type="password" class="form-control" id="Password" placeholder="パスワード">
+										<span class="field-icon">
+											<i toggle="#password-field" class="fas fa-eye toggle-password"></i>
+										</span>
+										<div class="invalid-feedback">
+											現在のパスワードと違うものにしてください
+										</div>
+										<div class="invalid-feedback">
+											新しく設定するパスワードを２度入力してください
+										</div>
+									</div>
+								</div>
+							</form><!--/.form-->
 
-									<!-- <div class="pw-form">
-										<form class="pw-form-container">
-											<p>現在のパスワード</p>
-											<p><input type="email" placeholder="Email"></p>
-											<p>
-												<input type="password" placeholder="Password">
-												<span class="field-icon">
-												<i toggle="#password-field" class="fas fa-eye toggle-password"></i>
-												<!-- <i toggle="#password-field" class="mdi mdi-eye toggle-password"></i> --
-												</span>
-											</p>
-											<p>
-												<input type="submit" value="submit" onsubmit="return false;" disabled="disabled">
-											</p>
-										</form>
-									</div> -->
-
-
-							</div><!--/.row-->
+							<ul class="row justify-content-around mt-5 passbtn" id="ubutton">
+								<li class="col-4"><a>パスワードを変更する</a></li>
+								<!-- <li class="col-4"><a href="contact2.html">ログイン</a></li> -->
+							</ul>
 						</div><!--/.container-->
-					</section>
+					</section><!--/.c3-->
 
 				</div><!--/.inner-->
 			</div><!--/.contents-->
 		</div><!--/.row.usermenubar-->
 	</div><!--/.user.container-fluid-->
 
-	
+
 	<footer id="footer"></footer>
 </body>
 
