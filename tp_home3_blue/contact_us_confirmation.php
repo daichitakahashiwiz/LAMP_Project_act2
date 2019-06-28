@@ -79,10 +79,10 @@
 
 
                     <p class="c">
-                    <a href="contact_us.html">
+                    <a href="contact_us.php">
                         <input type="submit" value="戻る" class="btn">
                     </a>                    
-                    <a href="index.html">
+                    <a href="index.php">
                         <input type="submit" value="送信" class="btn">
                     </a></p>
 

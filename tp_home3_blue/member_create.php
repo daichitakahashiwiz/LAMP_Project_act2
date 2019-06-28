@@ -64,84 +64,149 @@
 					<table class="ta1">
 						<tr>
 							<th>お名前※</th>
-                            <td>ここに入力内容が入ります</td>
+							<td> 姓 <input type="text" name="お名前" size="15"> 名 <input type="text" name="お名前" size="15">
+							</td>
 						</tr>
 						<tr>
 							<th>お名前(カナ)※</th>
-                            <td>ここに入力内容が入ります</td>
+							<td> セイ <input type="text" name="お名前(カナ)" size="15"> メイ <input type="text" name="お名前"
+									size="15"></td>
 						</tr>
 
 						<!-- style="border :1px solid #eee; font-size :25px;" -->
+
+						<script src="js/getDate.js"></script>
+						
 						<tr>
 							<th>生年月日</th>
-                            <td>ここに入力内容が入ります</td>
+							<td><a id="year"></a><a id="month"></a><a id="day"></a></td>
 						</tr>
 
 						<tr>
 							<th>郵便番号※</th>
-                            <td>ここに入力内容が入ります</td>
-                        	</tr>
+							<td><input type="text" name="郵便" size="3"> ー <input type="text" name="番号" size="4"></td>
+						</tr>
 
 						<tr>
 							<th>都道府県※</th>
-                            <td>ここに入力内容が入ります</td>
+							<td>
+								<select name="pref_id" style="height: 26px;">
+									<option value="1">北海道</option>
+									<option value="2">青森県</option>
+									<option value="3">岩手県</option>
+									<option value="4">宮城県</option>
+									<option value="5">秋田県</option>
+									<option value="6">山形県</option>
+									<option value="7">福島県</option>
+									<option value="8">茨城県</option>
+									<option value="9">栃木県</option>
+									<option value="10">群馬県</option>
+									<option value="11">埼玉県</option>
+									<option value="12">千葉県</option>
+									<option value="13">東京都</option>
+									<option value="14">神奈川県</option>
+									<option value="15">新潟県</option>
+									<option value="16">富山県</option>
+									<option value="17">石川県</option>
+									<option value="18">福井県</option>
+									<option value="19">山梨県</option>
+									<option value="20">長野県</option>
+									<option value="21">岐阜県</option>
+									<option value="22">静岡県</option>
+									<option value="23">愛知県</option>
+									<option value="24">三重県</option>
+									<option value="25">滋賀県</option>
+									<option value="26">京都府</option>
+									<option value="27">大阪府</option>
+									<option value="28">兵庫県</option>
+									<option value="29">奈良県</option>
+									<option value="30">和歌山県</option>
+									<option value="31">鳥取県</option>
+									<option value="32">島根県</option>
+									<option value="33">岡山県</option>
+									<option value="34">広島県</option>
+									<option value="35">山口県</option>
+									<option value="36">徳島県</option>
+									<option value="37">香川県</option>
+									<option value="38">愛媛県</option>
+									<option value="39">高知県</option>
+									<option value="40">福岡県</option>
+									<option value="41">佐賀県</option>
+									<option value="42">長崎県</option>
+									<option value="43">熊本県</option>
+									<option value="44">大分県</option>
+									<option value="45">宮崎県</option>
+									<option value="46">鹿児島県</option>
+									<option value="47">沖縄県</option>
+								</select>
+							</td>
 						</tr>
 
 						<tr>
 							<th>市区町村、番地※</th>
-                            <td>ここに入力内容が入ります</td>
+							<td><input type="text" name="市区町村、番地" size="30" class="ws"></td>
 						</tr>
 
 						<tr>
 							<th>ビル名、マンション名※</th>
-                            <td>ここに入力内容が入ります</td>
+							<td><input type="text" name="ビル名、マンション名" size="30" class="ws"></td>
 						</tr>
 
 						<tr>
 							<th>性別※</th>
-                            <td>ここに入力内容が入ります</td>
+							<td>
+								<input type="radio" name="q2" value="男" checked> 男
+								<input type="radio" name="q2" value="女"> 女
+								<input type="radio" name="q2" value="その他"> その他
+							</td>
 						</tr>
 
 						<tr>
 							<th>電話番号1※</th>
-						  <td>ここに入力内容が入ります</td>
+							<td><input type="text" name="電話" size="4"> ー <input type="text" name="番" size="4"> ー <input
+									type="text" name="郷" size="4"></td>
 						</tr>
 
 						<tr>
-							<th>電話番号2※</th>  <td>ここに入力内容が入ります</td>
+							<th>電話番号2※</th>
+							<td><input type="text" name="電話2" size="4"> ー <input type="text" name="番2" size="4"> ー
+								<input type="text" name="郷2" size="4"></td>
 						</tr>
 
 						<tr>
 							<th>メールアドレス1※</th>
-                            <td>ここに入力内容が入ります</td>
+							<td><input type="text" name="メール" size="20"> ＠ <input type="text" name="アドレス" size="10">
+							</td>
 						</tr>
 
 						<tr>
 							<th>メールアドレス2</th>
-                            <td>ここに入力内容が入ります</td>
+							<td><input type="text" name="メール2" size="20"> ＠ <input type="text" name="アドレス2" size="10">
+							</td>
 						</tr>
 
 						<tr>
 							<th>パスワード※</th>
-                            <td>ここに入力内容が入ります</td>	</tr>
+							<td><input type="password" name="パスワード" size="30" class="ws"></td>
+						</tr>
 
 						<tr>
 							<th>パスワード(再確認)※</th>
-                            <td>ここに入力内容が入ります</td>	</tr>
+							<td><input type="password" 　 name="パスワード(再確認)" size="30" class="ws"></td>
+						</tr>
 
 						<!-- <tr>
 	<th>お問い合わせ詳細※</th>
 	<td><textarea name="お問い合わせ詳細" cols="30" rows="10" class="wl"></textarea></td>
 	</tr> -->
 					</table>
-                    <p class="c">
-                        <a href="member_create.html">
-                            <input type="submit" value="戻る" class="btn">
-                        </a>                    
-                        <a href="index.html">
-                            <input type="submit" value="送信" class="btn">
-                        </a></p>
-    
+
+
+
+					<p class="c"><a href="member_create_confirmation.php">
+							<input type="submit" value="内容を確認する" class="btn">
+					</p>
+
 				</section>
 
 			</div>
