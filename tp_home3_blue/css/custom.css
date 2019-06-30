@@ -15,7 +15,7 @@
 /* ユーザーページメニューバー固定
 —————————————————————————————————— */
 .main-content{
-	height:2000px;
+	/* height:2000px; */
 }
 /* 固定するメニューバー */
 #usermenubar{
@@ -93,5 +93,56 @@
     color: #fff;
 }
 
+
+
+/* 退会ページ
+—————————————————————————————————— */
+.list.unsubscribe{
+	text-align: center;
+}
+p.warning{
+	background-color: #FEF2F2;
+}
+.unsubscribe .c3 .list p{
+	height: auto;
+}
+
+/* ボタンhedderコピペ色変えただけ　雑み */
+#ubutton li a{
+	text-decoration: none;
+	display: inline-block;
+	background: #2b3f7f;	/*背景色（古いブラウザ用）*/
+	background: linear-gradient(#324992, #2b3f7f);	/*グラデーション*/
+	color: #FFF;	/*文字色*/
+	padding: 0px 15px;	/*上下、左右へのボックス内の余白*/
+	border-radius: 4px;	/*角丸のサイズ*/
+	border: 1px solid #2b3f7f;	/*枠線の幅、線種、色*/
+}
+/*マウスオン時*/
+#ubutton li a:hover {
+	color: #2b3f7f;	/*文字色*/
+	background: #fff;	/*背景色*/
+}
+
+/*listの中にリンクつけると出てくる〇➡削除*/
+.unsubscribe .list a::before,
+.unsubscribedone.list a::before {
+	display: none;
+}
+.usermenubar a{
+	height: auto;
+}
+
+
+
+/* パスワード変更画面
+—————————————————————————————————— */
+
+/* 目のことの位置調整 */
+.field-icon{
+	position: absolute;
+	top: 3.5px;
+	right: 25px;
+}
 
 

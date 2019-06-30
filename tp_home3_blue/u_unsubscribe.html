@@ -35,7 +35,8 @@
 		});
 	</script>
 	<style>
-		a.user,a.unsubscribe{
+		a.user,
+		a.unsubscribe {
 			background: #2b3f7f;
 			color: #fff;
 		}
@@ -53,43 +54,90 @@
 				<div id="usermenubar"></div>
 			</div>
 
-			<div class="col-10 main-content bg-primary contents">
+			<div class="col-10 main-content contents">
 				<div class="inner">
-					<!-------------------------------------
-
-						ここから右の青いとこだよ！！！！
-						青いのは2個上のdivタグのクラスの
-						bg-primaryを消すと白くなるよ！！！！！
-
-					--------------------------------------->
-
-					<section class="c3">
-						<h2>サンプルホーム３つのこだわり</h2>
+					<section>
+						<h2>退会手続き</h2>
 						<div class="container">
 							<div class="row">
-							</div><!--/.row-->
-						</div><!--/.container-->
-					</section>
-					<section class="c3">
-						<h2>サンプルホーム３つのこだわり</h2>
-						<div class="container">
-							<div class="row">
-							</div><!--/.row-->
-						</div><!--/.container-->
-					</section>
-					<section class="c3">
-						<h2>サンプルホーム３つのこだわり</h2>
-						<div class="container">
-							<div class="row">
-							</div><!--/.row-->
-						</div><!--/.container-->
-					</section>
-				</div><!--/.inner-->
-			</div><!--/.contents-->
-		</div><!--/.row.usermenubar-->
-	</div><!--/.user.container-fluid-->
+								<div class="col unsubscribe">
 
+									<!-- <p class="text-danger warning">
+											<i class="fas fa-exclamation-circle text-danger"></i>
+											退会にあたっての注意事項<br/>
+											退会を行うと進行途中のサービスを終了し、以下の情報が全てなくなります。
+										</p> -->
+
+									<div class="list unsubscribe">
+
+										<p class="text-danger warning">
+											<i class="fas fa-exclamation-circle text-danger"></i>
+											退会にあたっての注意事項<br />
+											退会を行うと進行途中のサービスを終了し、以下の情報が全てなくなります。
+										</p>
+										<!-- <h4>リンクを設定しないと</h4>
+										<p>このブに、ボックス右下の矢印マークが出なくなります。画像も外してもらってもOK。</p> -->
+										<div class="container mt-5">
+											<div class="row c3 justify-content-around">
+												<div class="col-3 list">
+													<i class="fas fa-address-card fa-5x"></i>
+													<p>ユーザー情報</p>
+												</div>
+												<div class="col-3 list">
+													<i class="fas fa-list-alt fa-5x"></i>
+													<p>プランのデータ</p>
+												</div>
+												<div class="col-3 list">
+													<i class="fas fa-comments fa-5x"></i>
+													<p>これまでのチャット</p>
+												</div>
+											</div><!--/.row-->
+											<div class="row c3 justify-content-around">
+												<div class="col-3 list">
+													<i class="fas fa-address-card fa-5x"></i>
+													<p>ユーザー情報</p>
+												</div>
+												<div class="col-3 list">
+													<i class="fas fa-address-card fa-5x"></i>
+													<p>ユーザー情報</p>
+												</div>
+												<div class="col-3 list">
+													<i class="fas fa-comments fa-5x"></i>
+													<p>これまでのチャット</p>
+												</div>
+											</div><!--/.row-->
+
+
+											<!-- <div class=""> -->
+												<ul class="row justify-content-around" id="ubutton">
+													<li><a href="./u_unsubxcribeDone.html">退会します</a></li>
+													<!-- <li class="col-4"><a href="contact2.html">ログイン</a></li> -->
+												</ul>
+											<!-- </div> -->
 	
+										</div><!--/.container-->
+
+
+
+
+									</div><!--/.list-->
+								</div><!--/.col-->
+							</div><!--/.row-->
+	
+						</div><!--/.container-->
+					</section>
+
+
+				</div>
+				<!--/.inner-->
+			</div>
+			<!--/.contents-->
+		</div>
+		<!--/.row.usermenubar-->
+	</div>
+	<!--/.user.container-fluid-->
+
+
 	<footer id="footer"></footer>
 </body>
 
