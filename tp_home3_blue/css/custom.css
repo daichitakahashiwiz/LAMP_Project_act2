@@ -59,14 +59,3 @@
     background: #2b3f7f;
     color: #fff;
 }
-/*プラン確認画面*/
-.btn-blue{
-    background: #fff;
-    border-color: #393e50;
-    float: right;
-    min-width: 10%;
-}
-.btn-blue:hover, .btn-blue:focus {
-    background: #2b3f7f;
-    color: #fff;
-}
