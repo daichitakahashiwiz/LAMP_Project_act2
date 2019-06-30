@@ -1,61 +1,49 @@
 @charset "utf-8";
 
-.logo{
-        /* 中央表示 */
-	/* top: 50%;
-	left: 50%;
-    transform: translate(-50%, -50%); 要素に2D変形、または、3D変形を適用する */
-}
+/*——————————————————————————————————
+    自分で変更したやつ
+——————————————————————————————————*/
 
 
+/* スライダーの画像
+—————————————————————————————————— */
 .d-block{
     min-height: 700px;
 }
 
-/*ログイン画面*/
-.login-container{
-    margin-top: 5%;
-    margin-bottom: 5%;
+
+/* ユーザーページメニューバー固定
+—————————————————————————————————— */
+.main-content{
+	height:2000px;
 }
-.login-form-2{
-    padding: 5%;
-    background: #0062cc;
-    box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19);
-    margin: 0 auto;
+/* 固定するメニューバー */
+#usermenubar{
+	top:0px;
+	position: -webkit-sticky;
+	position: sticky;
 }
-.login-form-2 h1{
-    font-size: 60px;
-    text-align: center;
-    color: #fff;
+/* 左の青いやつ */
+#usermenubar h2{
+	border-left: 3px solid #2b3f7f;
 }
-.login-container form{
-    padding: 10%;
+/* 右コンテナの横幅 */
+.user .inner{
+	width: 1000px;
 }
-.btnSubmit{
-    width: 50%;
-    border-radius: 1rem;
-    padding: 1.5%;
-    border: none;
-    cursor: pointer;
+/* 背景と外枠をなくす */
+.usermenubar .box1{
+	background: white;
+	border: solid 0px;
 }
-.login-form-2 .btnSubmit{
-    font-weight: 600;
-    color: #0062cc;
-    background-color: #fff;
+/* 立幅調節 */
+.usermenubar a{
+	height: 60px;
+	line-height: 50px;
 }
-.login-form-2 .ForgetPwd{
-    color: #fff;
-    font-weight: 600;
-    text-decoration: none;
-}
-.login-form-2 .NewPwd{
-    color: #fff;
-    font-weight: 600;
-    text-decoration: none;
+/* メニューバーの上ちょっと調節 */
+.usermenubar .sub h2{
+	margin-top: 5px;
 }
 
-/*よくある質問*/
-.card-header{
-    background: #2b3f7f;
-    color: #fff;
-}
+
