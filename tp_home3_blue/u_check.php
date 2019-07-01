@@ -23,6 +23,7 @@
 		crossorigin="anonymous"></script>
 	<!-- css,jsの呼び出し -->
 	<link type="text/css" href="./css/import.css" rel="stylesheet" media="all" />
+	<link type="text/css" rel="stylesheet" href="./css/check.css" />
 	<script type="text/javascript" src="./js/app.js"></script>
 	<!-- Font Awesome (朱里のkit) -->
 	<script src="https://kit.fontawesome.com/a1bcba65a0.js"></script>
@@ -53,7 +54,7 @@
 				<div id="usermenubar"></div>
 			</div>
 
-			<div class="col-10 main-content bg-primary contents">
+			<div class="col-10 main-content contents">
 				<div class="inner">
 					<!-------------------------------------
 
@@ -64,26 +65,93 @@
 					--------------------------------------->
 
 					<section class="c3">
-						<h2>サンプルホーム３つのこだわり</h2>
-						<div class="container">
-							<div class="row">
-							</div><!--/.row-->
-						</div><!--/.container-->
-					</section>
+					<!-- <div class="progress" style="height: 1px;">
+					 <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">25%</div> 
+					</div> -->
+					<div class="container">
+						<div class="row">
+							<div class="col-sm-12 col-4">
+							全体進捗率
+								<div class="progress" style="height: 30px;">
+									<div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">25%</div>
+								</div>
+							</div>
+						</div><!--/.row-->
+					</div><!--/.container-->
+					<div class="container">
+						<div class="row">
+							<div class="col-sm-12 col-4">
+							進捗率１
+								<div class="progress" style="height: 30px;">
+									<div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">25%</div>
+								</div>
+							</div>
+						</div><!--/.row-->
+					</div><!--/.container-->
+					
 					<section class="c3">
-						<h2>サンプルホーム３つのこだわり</h2>
 						<div class="container">
 							<div class="row">
+								<div class="col-sm-1 col-0">
+
+								</div>
+								<div class="box2 col-sm-4 col-4">
+									<p><input type="checkbox" name="zyunbi01" value="2">テキスト</p>　
+								</div>
+								<div class="col-sm-1 col-0">
+
+								</div>
+								<div class="box2 col-sm-4 col-4">
+									<p><input type="checkbox" name="zyunbi01" value="2">テキスト</p>　
+								</div>
+								
+							
 							</div><!--/.row-->
-						</div><!--/.container-->
-					</section>
-					<section class="c3">
-						<h2>サンプルホーム３つのこだわり</h2>
+							<div class="row">
+								<div class="col-sm-1 col-0">
+
+								</div>
+								<div class="box2 col-sm-4 col-4">
+									<p><input type="checkbox" name="zyunbi01" value="2">テキスト</p>　
+								</div>
+								<div class="col-sm-1 col-0">
+
+								</div>
+								<div class="box2 col-sm-4 col-4">
+									<p><input type="checkbox" name="zyunbi01" value="2">テキスト</p>　
+								</div>
+								
+							
+							</div><!--/.row-->
+						</div>
+						
 						<div class="container">
 							<div class="row">
+								<div class="col-sm-12 col-4">
+									進捗率２
+									<div class="progress" style="height: 30px;">
+										<div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">25%</div>
+				 					</div>
+								</div>
 							</div><!--/.row-->
 						</div><!--/.container-->
-					</section>
+						<div class="container">
+							<div class="row">
+								<div class="col-sm-1 col-0">
+
+								</div>
+								<div class="box2 col-sm-4 col-4">
+									<p><input type="checkbox" name="zyunbi01" value="2">テキスト</p>　
+								</div>
+								<div class="col-sm-1 col-0">
+
+								</div>
+								<div class="box2 col-sm-4 col-4">
+									<p><input type="checkbox" name="zyunbi01" value="2">テキスト</p>　
+								</div>
+							</div><!--/.row-->
+						</div><!--/.container-->
+					</div>
 				</div><!--/.inner-->
 			</div><!--/.contents-->
 		</div><!--/.row.usermenubar-->

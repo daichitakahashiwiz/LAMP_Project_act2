@@ -95,7 +95,7 @@
 											<div class="bms_message bms_left">
 												<div class="bms_message_box">
 													<div class="bms_message_content">
-														<div class="bms_message_text"><p class="w-nomal">猪狩君ってどんな人？</p></div>
+														<div class="bms_message_text" class="w-nomal">テキスト</div>
 													</div>
 												</div>
 											</div>
@@ -105,7 +105,7 @@
 											<div class="bms_message bms_right">
 												<div class="bms_message_box">
 													<div class="bms_message_content">
-														<div class="bms_message_text">ヤニカス</div>
+														<div class="bms_message_text">テキスト</div>
 													</div>
 												</div>
 											</div>
@@ -114,7 +114,7 @@
 											<div class="bms_message bms_right">
 												<div class="bms_message_box">
 													<div class="bms_message_content">
-														<div class="bms_message_text">ホモ</div>
+														<div class="bms_message_text">テキスト</div>
 													</div>
 												</div>
 											</div>
@@ -123,7 +123,7 @@
 											<div class="bms_message bms_right">
 												<div class="bms_message_box">
 													<div class="bms_message_content">
-														<div class="bms_message_text">酒乱</div>
+														<div class="bms_message_text">テキスト</div>
 													</div>
 												</div>
 											</div>
@@ -132,7 +132,7 @@
 											<div class="bms_message bms_right">
 												<div class="bms_message_box">
 													<div class="bms_message_content">
-														<div class="bms_message_text">手汗</div>
+														<div class="bms_message_text">テキスト</div>
 													</div>
 												</div>
 											</div>
@@ -141,7 +141,7 @@
 											<div class="bms_message bms_right">
 												<div class="bms_message_box">
 													<div class="bms_message_content">
-														<div class="bms_message_text">ガイジ</div>
+														<div class="bms_message_text">テキスト</div>
 													</div>
 												</div>
 											</div>
@@ -150,7 +150,7 @@
 											<div class="bms_message bms_right">
 												<div class="bms_message_box">
 													<div class="bms_message_content">
-														<div class="bms_message_text">やまにー</div>
+														<div class="bms_message_text">テキスト</div>
 													</div>
 												</div>
 											</div>
@@ -159,7 +159,7 @@
 											<div class="bms_message bms_right">
 												<div class="bms_message_box">
 													<div class="bms_message_content">
-														<div class="bms_message_text">椅子クラッシャー</div>
+														<div class="bms_message_text">テキスト</div>
 													</div>
 												</div>
 											</div>
@@ -168,7 +168,7 @@
 											<div class="bms_message bms_right">
 												<div class="bms_message_box">
 													<div class="bms_message_content">
-														<div class="bms_message_text">社畜</div>
+														<div class="bms_message_text">テキスト</div>
 													</div>
 												</div>
 											</div>
@@ -177,7 +177,7 @@
 											<div class="bms_message bms_right">
 												<div class="bms_message_box">
 													<div class="bms_message_content">
-														<div class="bms_message_text"></div>
+														<div class="bms_message_text">テキスト</div>
 													</div>
 												</div>
 											</div>
@@ -209,5 +209,4 @@
 
 	<footer id="footer"></footer>
 </body>
-
 </html>
