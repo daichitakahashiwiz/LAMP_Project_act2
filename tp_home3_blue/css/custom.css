@@ -75,7 +75,8 @@ p.warning{
 
 /*listの中にリンクつけると出てくる〇➡削除*/
 .unsubscribe .list a::before,
-.unsubscribedone.list a::before {
+.unsubscribedone.list a::before, 
+.login.list a::before{
 	display: none;
 }
 .usermenubar a{
@@ -95,3 +96,12 @@ p.warning{
 }
 
 
+/* ホーム画面
+—————————————————————————————————— */
+/* 電話番号 */
+.number{
+	color: white;;
+	font-size: 35px;
+	font-weight: 600;
+	-webkit-text-stroke: 1px #2b3f7f;
+}
