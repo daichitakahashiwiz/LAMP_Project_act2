@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>株式会社 猪狩典礼 ～終活支援サービスサイト～</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="終活をサポートするサイトです">
+	<link rel="alternate stylesheet" href="css/change.css" title="change">
+	<script type="text/javascript" src="js/openclose.js"></script>
+	<script type="text/javascript" src="js/ddmenu_min.js"></script>
+	<script type="text/javascript" src="js/styleswitcher.js"></script>
+
+	<!-- jQueryの呼び出し -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<!-- Bootstrap core CSS -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<!-- Bootstrap core js -->
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+	<!-- css,jsの呼び出し -->
+	<link type="text/css" href="./css/import.css" rel="stylesheet" media="all" />
+	<script type="text/javascript" src="./js/app.js"></script>
+	<!-- Font Awesome (朱里のkit) -->
+	<script src="https://kit.fontawesome.com/a1bcba65a0.js"></script>
+	<!-- HTMLの呼び出し -->
+	<script>
+		$(function () {
+			$("#header").load("./html/include/header.html");
+			// $("#main").load("html/main.html");
+			$("#footer").load("./html/include/footer.html");
+		});
+	</script>
+	<style>
+		a.index{
+			background: #2b3f7f;
+			color: #fff;
+		}
+	</style>
+</head>
+
+<body>
+	<header id="header"></header>
+
+	<!--スライドショー-->
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col">
+				<div id="carousel-example" class="carousel slide carousel-fade" data-ride="carousel">
+					<ol class="carousel-indicators">
+						<li data-target="#carousel-example" data-slide-to="0" class="active"></li>
+						<li data-target="#carousel-example" data-slide-to="1"></li>
+						<li data-target="#carousel-example" data-slide-to="2"></li>
+					</ol>
+					<div class="carousel-inner" style="height: 700px;">
+						<div class="carousel-item active">
+							<img class="d-block w-100" src="./images/slide/s1.jpg" alt="スライドA">
+						</div>
+						<div class="carousel-item">
+							<img class="d-block w-100" src="./images/slide/s2.jpg" alt="スライドB">
+						</div>
+						<div class="carousel-item">
+							<img class="d-block w-100" src="./images/slide/s3.jpg" alt="スライドC">
+						</div>
+					</div>
+					<a class="carousel-control-prev" href="#carousel-example" role="button" data-slide="prev">
+						<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+						<span class="sr-only">Previous</span>
+					</a>
+					<a class="carousel-control-next" href="#carousel-example" role="button" data-slide="next">
+						<span class="carousel-control-next-icon" aria-hidden="true"></span>
+						<span class="sr-only">Next</span>
+					</a>
+				</div><!-- .carousel -->
+			</div><!-- .col -->
+		</div><!-- .row -->
+	</div><!-- .container -->
+
+
+	<div class="contents bg1">
+		<div class="inner">
+			<section class="c3">
+				<h2>サンプルホーム３つのこだわり</h2>
+				<div class="container">
+					<div class="row">
+						<div class="col list">
+							<a href="service2.html">
+								<figure><img src="images/sample2.jpg" alt=""></figure>
+								<h4 align="center">プラン1</h4>
+								<p>ここにテキストを入れます。サンプルテキスト。専門の調理師が献立を作っております。サンプルテキスト。サンプルテキスト。</p>
+							</a>
+						</div>
+						<div class="col list">
+							<a href="service2.html">
+								<figure><img src="images/sample2.jpg" alt=""></figure>
+								<h4 align="center">プラン2</h4>
+								<p>ここにテキストを入れます。サンプルテキスト。専門の調理師が献立を作っております。サンプルテキスト。サンプルテキスト。</p>
+							</a>
+						</div>
+						<div class="col list">
+							<a href="service2.html">
+								<figure><img src="images/sample2.jpg" alt=""></figure>
+								<h4 align="center">プラン3</h4>
+								<p>ここにテキストを入れます。サンプルテキスト。専門の調理師が献立を作っております。サンプルテキスト。サンプルテキスト。</p>
+							</a>
+						</div>
+					</div><!--/.row-->
+				</div><!--/.container-->
+			</section>
+		</div><!--/.inner-->
+	</div><!--/.contents-->
+
+	<div class="contents">
+		<div class="inner">
+
+			<div class="main">
+
+				<section id="new">
+					<h2>更新情報・お知らせ</h2>
+					<dl>
+						<dt>2018/06/14</dt>
+						<dd>小さな端末を横向きにした際に、メニューが途中で切れる場合があったのを修正。<span class="newicon">NEW</span></dd>
+						<dt>2017/12/25</dt>
+						<dd>tp_home3公開。<span class="newicon">NEW</span></dd>
+						<dt>20XX/00/00</dt>
+						<dd>サンプルテキスト。サンプルテキスト。サンプルテキスト。</dd>
+						<dt>20XX/00/00</dt>
+						<dd>サンプルテキスト。サンプルテキスト。サンプルテキスト。</dd>
+						<dt>20XX/00/00</dt>
+						<dd>サンプルテキスト。サンプルテキスト。サンプルテキスト。</dd>
+						<dt>20XX/00/00</dt>
+						<dd>サンプルテキスト。サンプルテキスト。サンプルテキスト。</dd>
+						<dt>20XX/00/00</dt>
+						<dd>サンプルテキスト。サンプルテキスト。サンプルテキスト。</dd>
+						<dt>20XX/00/00</dt>
+						<dd>サンプルテキスト。サンプルテキスト。サンプルテキスト。</dd>
+					</dl>
+					<p class="r">&raquo;&nbsp;<a href="#">過去ログ</a></p>
+				</section>
+
+				<section>
+
+					<h2>テンプレートのご利用前に必ずお読み下さい</h2>
+
+					<h3>利用規約のご案内</h3>
+					<p>このテンプレートは、<a href="http://template-party.com/">Template Party</a>にて無料配布している『老人ホーム・介護施設・デイサービス向け
+						無料ホームページテンプレート tp_home3』です。必ずダウンロード先のサイトの<a
+							href="http://template-party.com/read.html">利用規約</a>をご一読の上でご利用下さい。</p>
+					<p><strong class="color1">■HP最下部の著作表示『Web Design:Template-Party』は無断で削除しないで下さい。</strong><br>
+						わざと見えなく加工する事も禁止です。</p>
+					<p><strong class="color1">■下部の著作を外したい場合は</strong><br>
+						<a href="http://template-party.com/">Template-Party</a>の<a
+							href="http://template-party.com/member.html">ライセンス契約</a>を行う事でHP下部の著作を外す事ができます。</p>
+
+					<h3 style="color: red;">※当テンプレートにはお問い合わせフォーム（自動フォーム：試用版）がセットされています</h3>
+					<p><a href="contact.html">contact.html</a>と同じ３項目のお問い合わせフォームを簡単に使えるようにセットしています。</p>
+					<p><strong class="color1">■自動フォームを使う場合（※編集に入る前にご確認下さい）</strong><br>
+						あなたのメールアドレス設定と、簡単な編集だけで使えます。<a href="http://template-party.com/file/formgen_manual_set2.html"
+							target="_blank">詳しくはこちらのマニュアルをご覧下さい。</a></p>
+					<p><strong class="color1">■自動フォームを使わない場合</strong><br>
+						テンプレートに梱包されている「form.html」「confirm.html」「finish.html」の3枚のファイルを削除して下さい。</p>
+
+					<h3>当ページ上部の人物写真はダウンロードファイルには梱包されていません</h3>
+					<p>配布元である「素材辞典」さんの利用規約により、ダウンロードファイルには梱包されておりません。PSD特典にも含まれませんのでご了承下さい。</p>
+
+					<h3>テンプレートに梱包されているjavascriptファイル（jsファイル）について</h3>
+					<p>当テンプレートに梱包されているjavascriptファイルは全て<a
+							href="http://www.crytus.co.jp/">有限会社クリタス様</a>提供のものです。jsファイルは改変せずにご利用下さい。<br>
+						また、当サイトのテンプレート「以外」に使いたいなど、「プログラムのみ」を使う場合は<a
+							href="http://template-party.com/free_program/openclose_license.html">こちらの規約</a>をお守り下さい。</p>
+
+					<h3>当テンプレートの詳しい使い方は</h3>
+					<p><a href="company.html#about">こちらをご覧下さい。</a></p>
+
+				</section>
+
+				<section>
+					<h2>老人ホーム・デイサービス・介護施設向けCMS販売中</h2>
+					<p><a href="http://template-party.com/hanyo_home/"><img
+								src="http://template-party.com/images/file/cms_home/img01_cm.jpg" alt=""></a></p>
+				</section>
+
+				<section>
+					<h2>WordPress専用テンプレート無料公開中</h2>
+					<p><a href="http://template-party.com/temp_wp.html"><img
+								src="http://template-party.com/images/file/wp/img01_home.jpg" alt=""></a></p>
+				</section>
+
+
+			</div>
+			<!--/main-->
+		</div>
+		<!--/inner-->
+	</div>
+	<!--/contents-->
+
+	<p id="pagetop" class="inner"><a href="#">↑</a></p>
+
+
+
+	<footer id="footer"></footer>
+
+	<!--メニュー開閉ボタン-->
+	<div id="menubar_hdr" class="close"></div>
+	<!--メニューの開閉処理条件設定　800px以下-->
+	<script type="text/javascript">
+		if (OCwindowWidth() <= 800) {
+			open_close("menubar_hdr", "menubar-s");
+		}
+	</script>
+
+
+</body>
+
+</html>
