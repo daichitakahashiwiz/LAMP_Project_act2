@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-    <title>～猪狩典礼～ 管理者 アカウント変更</title>
+    <title>～猪狩典礼～ 管理者 トップページ</title>
     <!-- Favicon-->
     <link rel="icon" href="favicon.ico" type="image/x-icon">
 
@@ -532,7 +532,130 @@
     <section class="content">
         <div class="container-fluid">
 
+            <div class="row clearfix">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="card">
+                        <div class="header">
+                            <h2>
+                                アカウント変更
+                            </h2>
+                        </div>
+                        <div class="body">
+                            <form>
+                                <div class="container">
+                                    <form id="" method="">
+                                        <label>氏名</label>
+                                        <div class="row">
+                                            <div class="col-xs-4">
+                                                <input type="text" name="name" class="form-control" style="width:300px;" value="" required autofocus title="未入力です">
+                                            </div>
+                                        </div>
 
+                                        <label>カナ</label>
+                                        <div class="row">
+                                            <div class="col-xs-4">
+                                                <input type="text" name="kana" class="form-control" style="width:300px;" value="" required autofocus title="未入力です">
+                                            </div>
+                                        </div>
+
+                                        <label>生年月日</label>
+                                        <div class="row">
+                                            <div class="col-xs-4">
+                                                <input type="date" name="birthday" class="form-control" style="width:150px;" value="" required autofocus title="未入力です">
+                                            </div>
+                                        </div>
+                                        <label>郵便番号</label>
+                                        <div class="row">
+                                            <div class="col-xs-4">
+                                                <!-- ▼郵便番号入力フィールド(3桁+4桁) -->
+                                                <input type="text" name="zip01" class="form-control" style="width:100px;" maxlength="7" onKeyUp="AjaxZip3.zip2addr(this,'','pref01','addr01');" value="" placeholder="xxxxxxx"  required autofocus title="未入力です">
+                                            </div>
+                                        </div>
+                                        <label>住所1(都道府県)</label>
+                                        <div class="row">
+                                            <div class="col-xs-4">
+                                                <input type="text" name="pref31" class="form-control" style="width:200px;" value=""  required autofocus title="未入力です">
+                                            </div>
+                                        </div>
+                                        <label>住所2(市町村、番地)</label>
+                                        <div class="row">
+                                            <div class="col-xs-4">
+                                                <input type="text" name="addr31" class="form-control" size="40" value="" required autofocus title="未入力です">
+                                            </div>
+                                        </div>
+
+                                        <label>住所3(マンション名、ビル名)</label>
+                                        <div class="row">
+                                            <div class="col-xs-4">
+                                                <input type="text" name="addr31" class="form-control" size="40" value="">
+                                            </div>
+                                        </div>
+
+                                        <label>性別</label>
+                                        <div class="demo-radio-button">
+                                            <input name="group5" type="radio" id="radio_1" class="with-gap radio-col-deep-orange" />
+                                            <label for="radio_1"> 男(man)</label>
+                                            <input name="group5" type="radio" id="radio_2" class="with-gap radio-col-deep-orange" />
+                                            <label for="radio_2"> 女(male)</label>
+                                        </div>
+                                        <br>
+                                        <label>電話番号1</label>
+                                        <div class="row">
+                                            <div class="col-xs-4">
+                                                <input type="tel" name="telephone1" class="form-control" style="width:200px;" value="" required autofocus title="未入力です">
+                                            </div>
+                                        </div>
+
+                                        <label>電話番号2</label>
+                                        <div class="row">
+                                            <div class="col-xs-4">
+                                                <input type="tel" name="telephone2" class="form-control" style="width:200px;" value="">
+                                            </div>
+                                        </div>
+                                        <label>メールアドレス1</label>
+                                        <div class="row">
+                                            <div class="col-xs-4">
+                                                <input type="email" name="E-mail1" class="form-control" style="width:200px;" value="" placeholder="xxxx@example.com" required autofocus title="未入力です">
+                                            </div>
+                                        </div>
+                                        <label>メールアドレス2</label>
+                                        <div class="row">
+                                            <div class="col-xs-4">
+                                                <input type="email" name="E-mail12" class="form-control" style="width:200px;" value="" placeholder="xxxx@example.com">
+                                            </div>
+                                        </div>
+                                        <h2 class="card-inside-title">アカウント状態</h2>
+                                        <div class="demo-switch">
+                                            <div class="switch">
+                                                <label>停止<input type="checkbox" checked><span class="lever"></span>稼働</label>
+                                            </div>
+                                        </div>
+                                        <br>
+                                        <br>
+                                            <!--
+                                            <div class="row">
+                                                <div class="col-xs-2">
+                                                    <label>password</label>
+                                                </div>
+                                                <div class="col-xs-4">
+                                                    <input type="text" name="password" class="form-control">
+                                                </div>
+                                            </div>
+                                            -->
+                                        <div class="button500">
+                                        <a href="buttonplus.html">
+                                            <input type="submit" VALUE="　　　　確認　　　　" class="btn btn-primary m-t-0 waves-effect">
+                                        </a>
+                                        </div>
+                                            <button type="buttons" class="btn btn-red m-t-0 waves-effect">　　　アカウント削除　　　</button>
+                                    </form>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <!-- #END# Tabs With Icon Title -->
+            </div>
 
         </div>
     </section>
@@ -575,9 +698,15 @@
     <!-- Custom Js -->
     <script src="js/admin.js"></script>
     <script src="js/pages/index.js"></script>
+    <script src="js/pages/forms/advanced-form-elements.js"></script>
+    <script src="js/pages/examples/sign-in.js"></script>
+
 
     <!-- Demo Js -->
     <script src="js/demo.js"></script>
+
+    <!--郵便番号API-->
+    <script src="https://ajaxzip3.github.io/ajaxzip3.js" charset="UTF-8"></script>
 </body>
 
 </html>

@@ -2533,11 +2533,39 @@ section.content {
 .btn-primary:focus {
   background-color: #1f91f3 !important; }
 
+.btn-o,
+.btn-o:hover,
+.btn-o:active,
+.btn-o:focus {
+  background-color: #ff4500 !important; }
+
 .btn-default,
 .btn-default:hover,
 .btn-default:active,
 .btn-default:focus {
   background-color: #fff !important; }
+
+.btn-red,
+.btn-red:hover,
+.btn-red:active,
+.btn-red:focus {
+  background-color: #ff0000 !important; }
+
+.btn-yellow,
+.btn-yellow:hover,
+.btn-yellow:active,
+.btn-yellow:focus {
+  background-color: #ffff00 !important; }
+
+div.button20 {
+padding-right:20px;
+float:left;
+}
+
+div.button500 {
+padding-right:500px;
+float:left;
+}
 
 .btn-group,
 .btn-group-vertical {
@@ -5088,10 +5116,10 @@ section.content {
   margin-bottom: 0; }
 
 .form-group {
-  width: 100%;
+  width: 50%;
   margin-bottom: 25px; }
   .form-group .form-control {
-    width: 100%;
+    width: 50%;
     border: none;
     box-shadow: none;
     -webkit-border-radius: 0;
