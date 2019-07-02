@@ -67,6 +67,153 @@
 
 /* ユーザーページメニューバー固定
 —————————————————————————————————— */
+.main-content{
+	/* height:2000px; */
+}
+/* 固定するメニューバー */
+#usermenubar{
+	top:0px;
+	position: -webkit-sticky;
+	position: sticky;
+}
+/* 左の青いやつ */
+#usermenubar h2{
+	border-left: 3px solid #2b3f7f;
+}
+/* 右コンテナの横幅 */
+.user .inner{
+	width: 1000px;
+}
+/* 背景と外枠をなくす */
+.usermenubar .box1{
+	background: white;
+	border: solid 0px;
+}
+/* 立幅調節 */
+.usermenubar a{
+	height: 60px;
+	line-height: 50px;
+}
+/* メニューバーの上ちょっと調節 */
+.usermenubar .sub h2{
+	margin-top: 5px;
+}
+/*ログイン画面*/
+.login-container{
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+.login-form-2{
+    padding: 5%;
+    background: #0062cc;
+    box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19);
+    margin: 0 auto;
+}
+.login-form-2 h1{
+    font-size: 60px;
+    text-align: center;
+    color: #fff;
+}
+.login-container form{
+    padding: 10%;
+}
+.btnSubmit{
+    width: 50%;
+    border-radius: 1rem;
+    padding: 1.5%;
+    border: none;
+    cursor: pointer;
+}
+.login-form-2 .btnSubmit{
+    font-weight: 600;
+    color: #0062cc;
+    background-color: #fff;
+}
+.login-form-2 .ForgetPwd{
+    color: #fff;
+    font-weight: 600;
+    text-decoration: none;
+}
+.login-form-2 .NewPwd{
+    color: #fff;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+/*よくある質問*/
+.card-header{
+    background: #2b3f7f;
+    color: #fff;
+}
+
+
+
+/* 退会ページ
+—————————————————————————————————— */
+.list.unsubscribe{
+	text-align: center;
+}
+p.warning{
+	background-color: #FEF2F2;
+}
+.unsubscribe .c3 .list p{
+	height: auto;
+}
+
+/* ボタンhedderコピペ色変えただけ　雑み */
+#ubutton li a{
+	text-decoration: none;
+	display: inline-block;
+	background: #2b3f7f;	/*背景色（古いブラウザ用）*/
+	background: linear-gradient(#324992, #2b3f7f);	/*グラデーション*/
+	color: #FFF;	/*文字色*/
+	padding: 0px 15px;	/*上下、左右へのボックス内の余白*/
+	border-radius: 4px;	/*角丸のサイズ*/
+	border: 1px solid #2b3f7f;	/*枠線の幅、線種、色*/
+}
+/*マウスオン時*/
+#ubutton li a:hover {
+	color: #2b3f7f;	/*文字色*/
+	background: #fff;	/*背景色*/
+}
+
+/*listの中にリンクつけると出てくる〇➡削除*/
+.unsubscribe .list a::before,
+.unsubscribedone.list a::before {
+	display: none;
+}
+.usermenubar a{
+	height: auto;
+}
+
+
+
+/* パスワード変更画面
+—————————————————————————————————— */
+
+/* 目のことの位置調整 */
+.field-icon{
+	position: absolute;
+	top: 3.5px;
+	right: 25px;
+}
+
+@charset "utf-8";
+
+/*——————————————————————————————————
+    自分で変更したやつ
+——————————————————————————————————*/
+
+
+/* スライダーの画像
+—————————————————————————————————— */
+.d-block{
+    min-height: 700px;
+}
+
+
+/* ユーザーページメニューバー固定
+—————————————————————————————————— */
 /* 固定するメニューバー */
 #usermenubar{
 	top:0px;
