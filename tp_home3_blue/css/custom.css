@@ -1,5 +1,59 @@
 @charset "utf-8";
 
+/*ログイン画面*/
+.login-container{
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+.login-form-2{
+    padding: 5%;
+    background: #0062cc;
+    box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19);
+    margin: 0 auto;
+}
+.login-form-2 h1{
+    font-size: 60px;
+    text-align: center;
+    color: #fff;
+}
+.login-container form{
+    padding: 10%;
+}
+.btnSubmit{
+    width: 50%;
+    border-radius: 1rem;
+    padding: 1.5%;
+    border: none;
+    cursor: pointer;
+}
+.login-form-2 .btnSubmit{
+    font-weight: 600;
+    color: #0062cc;
+    background-color: #fff;
+}
+.login-form-2 .ForgetPwd{
+    color: #fff;
+    font-weight: 600;
+    text-decoration: none;
+}
+.login-form-2 .NewPwd{
+    color: #fff;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+/*よくある質問*/
+.card-header{
+    background: #2b3f7f;
+    color: #fff;
+}
+
+
+
+
+
+
+
 /*——————————————————————————————————
     自分で変更したやつ
 ——————————————————————————————————*/
@@ -10,7 +64,6 @@
 .d-block{
     min-height: 700px;
 }
-
 
 /* ユーザーページメニューバー固定
 —————————————————————————————————— */
@@ -149,7 +202,7 @@ p.warning{
 
 /* プランの特徴 */
 .p_feature{
-	font-size: 16px;
+	font-size: 16px !important;
 	color: #2b3f7f;
 	border: solid 1px #2b3f7f;
 }
