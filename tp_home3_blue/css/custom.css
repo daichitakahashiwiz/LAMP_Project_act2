@@ -100,8 +100,57 @@ p.warning{
 —————————————————————————————————— */
 /* 電話番号 */
 .number{
-	color: white;;
+	color: #2b3f7f;;
 	font-size: 35px;
 	font-weight: 600;
-	-webkit-text-stroke: 1px #2b3f7f;
+	-webkit-text-stroke: 1px #596179;
 }
+
+
+
+/* プラン画面
+—————————————————————————————————— */
+
+.plan_list h4{
+	font-size: 45px !important;
+}
+.plan_list img{
+	max-height: 200px;
+	max-width: 266.66px;
+	position: absolute;
+	right: 30px;
+	top:92px;
+}
+.plan_list .number{
+	margin-bottom: 100px !important;
+}
+
+/* やるやつ */
+.schedule li,
+.schedule_d li,
+.p_ellipse{
+	background-color: #2b3f7f;
+	font-weight: 600;
+	color: white;
+}
+/* やらないやつ */
+.schedule li.border,
+.schedule_d li.border{
+	background-color: #F0F4FA;
+	font-weight: 600;
+	color: #B2B2B2;
+}
+.schedule li{
+	font-size: 10px;
+}
+.schedule_d li{
+	font-size: 13px;
+}
+
+/* プランの特徴 */
+.p_feature{
+	font-size: 16px;
+	color: #2b3f7f;
+	border: solid 1px #2b3f7f;
+}
+
