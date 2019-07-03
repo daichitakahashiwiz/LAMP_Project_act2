@@ -309,27 +309,48 @@ p.warning{
 	font-weight: 600;
 	-webkit-text-stroke: 1px #596179;
 }
+/* faq */
+.faqbox{
+	margin-right: 5px;display: inline-block;text-align: center;
+	width: 30px;		/*幅*/
+	line-height: 30px;	/*高さ*/
+	color: #fff;			/*文字色*/
+}
+.faqbox.q{
+	background: #2b3f7f;	/*背景色*/
+}
+.faqbox.a{
+	background: #999;	/*背景色*/
+	/* text-align: right; */
+	float: right;
+}
+.faqbox.a + p{
+	clear: both;	/* float解除 */
+}
 
+.faqbox.a + p{
+	height: auto !important;
+}
 
 
 /* プラン画面
 —————————————————————————————————— */
 
-.plan_list h4{
+.c2 .plan_list h4{
 	font-size: 45px !important;
 }
-.plan_list img{
+.c2 .plan_list img{
 	max-height: 200px;
 	max-width: 266.66px;
 	position: absolute;
 	right: 30px;
 	top:92px;
 }
-.plan_list .number{
+.c2 .plan_list .number{
 	margin-bottom: 100px !important;
 }
 
-/* やるやつ */
+/* スケジュール やるやつ */
 .schedule li,
 .schedule_d li,
 .p_ellipse{
@@ -337,7 +358,7 @@ p.warning{
 	font-weight: 600;
 	color: white;
 }
-/* やらないやつ */
+/* スケジュール やらないやつ */
 .schedule li.border,
 .schedule_d li.border{
 	background-color: #F0F4FA;
@@ -353,8 +374,64 @@ p.warning{
 
 /* プランの特徴 */
 .p_feature{
-	font-size: 16px !important;
+	font-size: 16px;
 	color: #2b3f7f;
 	border: solid 1px #2b3f7f;
+	font-weight: 500;
 }
+.p_feature + p{
+	height: auto !important;
+}
+
+/* 参拝者の人数 */
+.pn_num{
+	color: #2b3f7f;
+	font-size: 50px;
+	font-weight: 600;
+}
+.pn_txt{
+	color: #2b3f7f;
+	font-size: 30px;
+	font-weight: 800;
+}
+
+
+/* 3ブロックlist */
+.c3 .plan_list h4{
+	font-size: 30px !important;
+}
+.c3 .plan_list .number{
+	font-size: 30px !important;
+	
+}
+.c3 .plan_list .p_ellipse{
+	font-size: 14px;
+}
+.c3 .plan_list img{
+	max-height: 100px;
+	position: absolute;
+	/* max-width: 266.66px; */
+	right: 3px;
+	top:80px;
+}
+.c3 .p_feature{
+	font-size: 10px;
+}
+.p_feature_txt p{
+	font-size: 3px !important;
+}
+
+.c3 .pn_num{
+	color: #2b3f7f;
+	font-size: 30px;
+	font-weight: 600;
+}
+.c3 .pn_txt{
+	color: #2b3f7f;
+	font-size: 12px;
+	font-weight: 800;
+}
+
+
+
 
