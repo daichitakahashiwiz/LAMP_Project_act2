@@ -382,7 +382,6 @@ p.warning{
 .p_feature + p{
 	height: auto !important;
 }
-
 /* 参拝者の人数 */
 .pn_num{
 	color: #2b3f7f;
@@ -395,8 +394,9 @@ p.warning{
 	font-weight: 800;
 }
 
-
-/* 3ブロックlist */
+/*————————————————
+indexの3ブロックlist
+————————————————*/
 .c3 .plan_list h4{
 	font-size: 30px !important;
 }
@@ -431,7 +431,27 @@ p.warning{
 	font-size: 12px;
 	font-weight: 800;
 }
+/*———————————————————————
+planDetailsの1ブロックlist
+————————————————————————*/
+.c1 .plan_list h4{
+	font-size: 60px !important;
+}
+.c1 .number{
+	font-size: 60px;
+}
+.c1 .schedule_d{
+	/* float: right; */
 
-
-
+}
+.c1 .plan_list img{
+	/* max-height: 300px; */
+	min-width: 600px;
+	max-height: 200px;
+  	object-fit: cover; /* この一行を追加するだけ！ */
+	position: absolute;
+	/* max-width: 266.66px; */
+	right: 44px;
+	top:104px;
+}
 
