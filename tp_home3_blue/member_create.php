@@ -1,189 +1,295 @@
-<!DOCTYPE html>
-<html lang="ja">
+<?php
+/*!
+@file admin_detail.php
+@brief  管理者詳細(管理画面)
+@copyright Copyright (c) 2017 Yamanoi Yasushi.
+*/
+require_once("inc_base.php");
+require_once($CMS_COMMON_INCLUDE_DIR . "libs.php");
+require_once("inc_smarty.php");
+//以下はセッション管理用のインクルード
+require_once($CMS_COMMON_INCLUDE_DIR . "auth_adm.php");
 
-<head>
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>株式会社 猪狩典礼 ～終活支援サービスサイト～</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="終活をサポートするサイトです">
-	<link rel="alternate stylesheet" href="css/change.css" title="change">
-	<script type="text/javascript" src="js/openclose.js"></script>
-	<script type="text/javascript" src="js/ddmenu_min.js"></script>
-	<script type="text/javascript" src="js/styleswitcher.js"></script>
+$admin_master_id = 0;
+$err_array = array();
+$err_flag = 0;
 
-	<!-- jQueryの呼び出し -->
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-	<!-- Bootstrap core CSS -->
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-		integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-	<!-- Bootstrap core js -->
-	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-		integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-		crossorigin="anonymous"></script>
-	<!-- css,jsの呼び出し -->
-	<link type="text/css" href="./css/import.css" rel="stylesheet" media="all" />
-	<script type="text/javascript" src="./js/app.js"></script>
-	<!-- Font Awesome (朱里のkit) -->
-	<script src="https://kit.fontawesome.com/a1bcba65a0.js"></script>
-	<!-- HTMLの呼び出し -->
-	<script>
-		$(function () {
-			$("#header").load("./html/include/header.html");
-			// $("#main").load("html/main.html");
-			$("#footer").load("./html/include/footer.html");
-		});
-	</script>
-	<script src="https://ajaxzip3.github.io/ajaxzip3.js" charset="UTF-8"></script>
-	<style>
-		a.index {
-			background: #2b3f7f;
-			color: #fff;
+if(isset($_GET['aid']) 
+//cutilクラスのメンバ関数をスタティック呼出
+	&& cutil::is_number($_GET['aid'])
+	&& $_GET['aid'] > 0){
+	$admin_master_id = $_GET['aid'];
+}
+//$_POST優先
+if(isset($_POST['admin_master_id']) 
+//cutilクラスのメンバ関数をスタティック呼出
+	&& cutil::is_number($_POST['admin_master_id'])
+	&& $_POST['admin_master_id'] > 0){
+	$admin_master_id = $_POST['admin_master_id'];
+}
+
+//管理者クラスを構築
+$admin_master_obj = new cadmin_master();
+//配列に管理者を$_POSTに取り出す
+//すでにPOSTされていたら、DBからは取り出さない
+
+if(isset($_POST['func'])){
+	switch($_POST['func']){
+		case 'set':
+		    if(!paramchk()){
+		        $_POST['func'] = 'edit';
+		        $err_flag = 1;
+		    }
+		    else{
+		        regist();
+		        //regist()内でリダイレクトするので
+		        //ここまで実行されればリダイレクト失敗
+		        $_POST['func'] = 'edit';
+		        //システムに問題のあるエラー
+		        $err_flag = 2;
+		    }
+		case 'conf':
+			if(!paramchk()){
+				$_POST['func'] = 'edit';
+				$err_flag = 1;
+			}
+		break;
+		case 'edit':
+			//戻るボタン。
+		break;
+		default:
+			//通常はありえない
+			echo '原因不明のエラーです。';
+			exit;
+		break;
+	}
+}
+else{
+    if($admin_master_id > 0){
+		if(($_POST = $admin_master_obj->get_tgt_id(false,$admin_master_id)) === false){
+			$admin_master_id = 0;
+			$_POST['func'] = 'new';
 		}
-	</style>
-</head>
-
-<body>
-	<header id="header"></header>
-
-
-	<div class="contents">
-		<div class="inner">
-
-			<div class="main">
-
-				<section>
-
-					<h2>会員情報入力</h2>
-					<!-- <p>当ページと同じ３項目のお問い合わせフォーム（自動フォーム試用版）を簡単に使えるようにセットしています。<br>
-	<span style="color: red;">※当ページ（contact.html）はフォームの見本ページです。実際の自動フォームには使いませんのでご注意下さい。</span></p>
-	<p><strong class="color1">■自動フォームを使う場合（※編集に入る前にご確認下さい）</strong><br>
-	あなたのメールアドレス設定と、簡単な編集だけで使えます。<a href="http://template-party.com/file/formgen_manual_set2.html" target="_blank">こちらのマニュアルをご覧下さい。</a></p>
-	<p><strong class="color1">■自動フォームを使わない場合</strong><br>
-	テンプレートに梱包されている「form.html」「confirm.html」「finish.html」の3枚のファイルを削除して下さい。</p> -->
-
-					<table class="ta1">
-						<tr>
-							<th>お名前※</th>
-							<td> 姓 <input type="text" name="お名前" size="15"> 名 <input type="text" name="お名前" size="15">
-							</td>
-						</tr>
-						<tr>
-							<th>お名前(カナ)※</th>
-							<td> セイ <input type="text" name="お名前(カナ)" size="15"> メイ <input type="text" name="お名前"
-									size="15"></td>
-						</tr>
-
-						<!-- style="border :1px solid #eee; font-size :25px;" -->
-
-						<script src="js/getDate.js"></script>
-						
-						<tr>
-							<th>生年月日</th>
-							<td><a id="year"></a><a id="month"></a><a id="day"></a></td>
-						</tr>
-
-						<tr>
-							<th>郵便番号※</th>
-							<td><input type="text" name="zip31" size="4" maxlength="3"> － <input type="text" name="zip32" size="5" maxlength="4" onKeyUp="AjaxZip3.zip2addr('zip31','zip32','pref31','addr31','addr31');"></td>
-						</tr>
-
-						<tr>
-							<th>都道府県※</th>
-							<td>
-							<input type="text" name="pref31" size="20">
-							</td>
-						</tr>
-
-						<tr>
-							<th>市区町村、番地※</th>
-							<td><input type="text" name="addr31" size="40"></td>
-						</tr>
-
-						<tr>
-							<th>ビル名、マンション名※</th>
-							<td><input type="text" name="ビル名、マンション名" size="30" class="ws"></td>
-						</tr>
-
-						<tr>
-							<th>性別※</th>
-							<td>
-								<input type="radio" name="q2" value="男" checked> 男
-								<input type="radio" name="q2" value="女"> 女
-								<input type="radio" name="q2" value="その他"> その他
-							</td>
-						</tr>
-
-						<tr>
-							<th>電話番号1※</th>
-							<td><input type="text" name="電話" size="4"> ー <input type="text" name="番" size="4"> ー <input
-									type="text" name="郷" size="4"></td>
-						</tr>
-
-						<tr>
-							<th>電話番号2※</th>
-							<td><input type="text" name="電話2" size="4"> ー <input type="text" name="番2" size="4"> ー
-								<input type="text" name="郷2" size="4"></td>
-						</tr>
-
-						<tr>
-							<th>メールアドレス1※</th>
-							<td><input type="text" name="メール" size="20"> ＠ <input type="text" name="アドレス" size="10">
-							</td>
-						</tr>
-
-						<tr>
-							<th>メールアドレス2</th>
-							<td><input type="text" name="メール2" size="20"> ＠ <input type="text" name="アドレス2" size="10">
-							</td>
-						</tr>
-
-						<tr>
-							<th>パスワード※</th>
-							<td><input type="password" name="パスワード" size="30" class="ws"></td>
-						</tr>
-
-						<tr>
-							<th>パスワード(再確認)※</th>
-							<td><input type="password" 　 name="パスワード(再確認)" size="30" class="ws"></td>
-						</tr>
-
-						<!-- <tr>
-	<th>お問い合わせ詳細※</th>
-	<td><textarea name="お問い合わせ詳細" cols="30" rows="10" class="wl"></textarea></td>
-	</tr> -->
-					</table>
-
-
-
-					<p class="c"><a href="member_create_confirmation.php">
-							<input type="submit" value="内容を確認する" class="btn">
-					</p>
-
-				</section>
-
-			</div>
-			<!--/main-->
-
-		</div>
-	</div>
-
-	<p id="pagetop" class="inner"><a href="#">↑</a></p>
-
-
-
-	<footer id="footer"></footer>
-
-	<!--メニュー開閉ボタン-->
-	<div id="menubar_hdr" class="close"></div>
-	<!--メニューの開閉処理条件設定　800px以下-->
-	<script type="text/javascript">
-		if (OCwindowWidth() <= 800) {
-			open_close("menubar_hdr", "menubar-s");
+		else{
+			$_POST['enc_password_chk'] = $_POST['enc_password'];
+			$_POST['func'] = 'edit';
 		}
-	</script>
+    }
+    else{
+		//新規の入力フォーム
+		$_POST['func'] = 'new';
+    }
+}
+
+//▲▲▲▲▲▲実行ブロック▲▲▲▲▲▲
+//▼▼▼▼▼▼関数ブロック▼▼▼▼▼▼
+
+//--------------------------------------------------------------------------------------
+/*!
+@brief  エラー存在のアサイン
+@return なし
+*/
+//--------------------------------------------------------------------------------------
+function assign_err_flag(){
+	//$smartyをグローバル宣言（必須）
+	global $smarty;
+	global $err_flag;
+	$str = '';
+	switch($err_flag){
+		case 1:
+		$str =<<<END_BLOCK
+
+入力エラーがあります。各項目のエラーを確認してください。
+END_BLOCK;
+		break;
+		case 2:
+		$str =<<<END_BLOCK
+
+更新に失敗しました。サポートを確認下さい。
+END_BLOCK;
+		break;
+	}
+	$smarty->assign('err_flag',$str);
+}
+
+//--------------------------------------------------------------------------------------
+/*!
+@brief  パラメータのチェック
+@return エラーの場合はfalseを返す
+*/
+//--------------------------------------------------------------------------------------
+function paramchk(){
+	global $err_array;
+	global $admin_master_id;
+	$retflg = true;
+////////////////////////////////////////////////////////////
+	if(ccontentsutil::chkset_err_field($err_array,'user_name','名前','isset_nl')){
+		$retflg = false;
+	}
+////////////////////////////////////////////////////////////
+	if(ccontentsutil::chkset_err_field($err_array,'user_name_kana','名前(カナ)','isset_nl')){
+		$retflg = false;
+	}
+////////////////////////////////////////////////////////////
+	if(ccontentsutil::chkset_err_field($err_array,'prefecture_id','都道府県','isset_num_more0')){
+		$retflg = false;
+	}
+////////////////////////////////////////////////////////////
+	if(ccontentsutil::chkset_err_field($err_array,'mail_address1','メールアドレス1','isset_mail')){
+		$retflg = false;
+	}
+	////////////////////////////////////////////////////////////
+	if(ccontentsutil::chkset_err_field($err_array,'mail_address2','メールアドレス2','isset_mail')){
+		$retflg = false;
+	}
+////////////////////////////////////////////////////////////
+	if(ccontentsutil::chkset_err_field($err_array,'birthday','生年月日','isset_mail')){
+		$retflg = false;
+	}
+////////////////////////////////////////////////////////////
+	if(ccontentsutil::chkset_err_field($err_array,'address_number','郵便番号','isset_num')){
+		$retflg = false;
+	}
+////////////////////////////////////////////////////////////
+	if(ccontentsutil::chkset_err_field($err_array,'address1','住所1','isset_nl')){
+		$retflg = false;
+	}
+////////////////////////////////////////////////////////////
+	if(ccontentsutil::chkset_err_field($err_array,'address2','住所2','isset')){
+		$retflg = false;
+	}
+// ////////////////////////////////////////////////////////////
+// 	if(ccontentsutil::chkset_err_field($err_array,'member_gender','性別','isset_pass')){
+// 		$retflg = false;
+// 	}
+////////////////////////////////////////////////////////////
+	if(ccontentsutil::chkset_err_field($err_array,'phone_number1','電話番号1','isset_num_range')){
+		$retflg = false;
+	}
+////////////////////////////////////////////////////////////
+	if(ccontentsutil::chkset_err_field($err_array,'phone_number2','電話番号2','isset_tel')){
+		$retflg = false;
+	}
+////////////////////////////////////////////////////////////
+	if(ccontentsutil::chkset_err_field($err_array,'passward','パスワード','isset_pass')){
+		$retflg = false;
+	}
+// ////////////////////////////////////////////////////////////
+// 	if(ccontentsutil::chkset_err_field($err_array,'employee_ID','割当従業員','isset_pass')){
+// 		$retflg = false;
+// 	}
+// ////////////////////////////////////////////////////////////
+// 	if(ccontentsutil::chkset_err_field($err_array,'account_state','アカウント状態','isset_pass')){
+// 		$retflg = false;
+// 	}
+////////////////////////////////////////////////////////////
+
+	else if($_POST['passward'] != $_POST['passward_sai']){
+		$err_array['passward_sai'] = "「パスワード確認」が「パスワード」と違っています。";
+		$retflg = false;
+	}
+	return $retflg;
+}
+
+//--------------------------------------------------------------------------------------
+/*!
+@brief  管理者データの追加／更新。保存後自分自身を再読み込みする。
+@return なし
+*/
+//--------------------------------------------------------------------------------------
+function regist(){
+    global $admin_master_id;
+    //パスワードが変更さえているかを確認する
+    if($admin_master_id > 0){
+        $obj = new cadmin_master();
+        $arr = $obj->get_tgt_id(false,$admin_master_id);
+        if($arr['passward'] != $_POST['passward']){
+            //変更された
+            $_POST['passward'] = cutil::pw_encode($_POST['passward']);
+        }
+    }
+    else{
+        //新規
+        $_POST['passward'] = cutil::pw_encode($_POST['passward']);
+    }
+    $dataarr = array();
+    $dataarr['admin_login'] = (string)$_POST['admin_login'];
+    $dataarr['admin_name'] = (string)$_POST['admin_name'];
+    $dataarr['enc_password'] = (string)$_POST['enc_password'];
+    $chenge = new cchange_ex();
+    if($admin_master_id > 0){
+        $chenge->update('admin_master',$dataarr,'admin_master_id=' . $admin_master_id);
+        cutil::redirect_exit($_SERVER['PHP_SELF'] . '?aid=' . $admin_master_id);
+    }
+    else{
+        $aid = $chenge->insert('admin_master',$dataarr);
+        cutil::redirect_exit($_SERVER['PHP_SELF'] . '?aid=' . $aid);
+    }
+}
+
+//--------------------------------------------------------------------------------------
+/*!
+@brief  管理者IDのアサイン
+@return なし
+*/
+//--------------------------------------------------------------------------------------
+function assign_admin_master_id(){
+    //$smartyをグローバル宣言（必須）
+    global $smarty;
+    global $admin_master_id;
+    $smarty->assign('user_id',$admin_master_id);
+}
+
+//--------------------------------------------------------------------------------------
+/*!
+@brief  管理者IDのアサイン(新規の場合は「新規」)
+@return なし
+*/
+//--------------------------------------------------------------------------------------
+function assign_admin_master_id_txt(){
+    //$smartyをグローバル宣言（必須）
+    global $smarty;
+    global $admin_master_id;
+    if($admin_master_id <= 0){
+        $smarty->assign('user_id_txt','新規');
+    }
+    else{
+        $smarty->assign('user_id_txt',$admin_master_id);
+    }
+}
 
 
-</body>
 
-</html>
+/////////////////////////////////////////////////////////////////
+/// 関数呼び出しブロック
+/////////////////////////////////////////////////////////////////
+if(!isset($_POST['user_name']))$_POST['user_name'] = '';
+if(!isset($_POST['user_name_kana']))$_POST['user_name_kana'] = '';
+if(!isset($_POST['prefecture_id']))$_POST['prefecture_id'] = '';
+if(!isset($_POST['mail_address1']))$_POST['mail_address1'] = '';
+if(!isset($_POST['mail_address2']))$_POST['mail_address2'] = '';
+if(!isset($_POST['birthday']))$_POST['birthday'] = '';
+if(!isset($_POST['address_number']))$_POST['address_number'] = '';
+if(!isset($_POST['address1']))$_POST['address1'] = '';
+if(!isset($_POST['address2']))$_POST['address2'] = '';
+if(!isset($_POST['phone_number1']))$_POST['phone_number1'] = '';
+if(!isset($_POST['phone_number2']))$_POST['phone_number2'] = '';
+if(!isset($_POST['passward']))$_POST['pasward'] = '';
+assign_err_flag();
+assign_admin_master_id();
+assign_admin_master_id_txt();
+$smarty->assign('err_array',$err_array);
+
+//Smartyを使用した表示(テンプレートファイルの指定)
+if(isset($_POST['func']) && $_POST['func'] == 'conf'){
+    $button = '更新';
+    if($admin_master_id <= 0){
+        $button = '追加';
+    }
+    $smarty->assign('button',$button);
+    $smarty->display('admin/member_create_confirmation.tmpl');
+}
+else{
+    $smarty->display('admin/member_create.tmpl');
+}
+?>

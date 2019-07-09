@@ -65,44 +65,42 @@
 					--------------------------------------->
 
 					<section class="c3">
-					<!-- <div class="progress" style="height: 1px;">
-					 <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">25%</div> 
-					</div> -->
-					<div class="container">
-						<div class="row">
-							<div class="col-sm-12 col-4">
-							全体進捗率
-								<div class="progress" style="height: 30px;">
-									<div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">25%</div>
-								</div>
-							</div>
-						</div><!--/.row-->
-					</div><!--/.container-->
-					<div class="container">
-						<div class="row">
-							<div class="col-sm-12 col-4">
-							進捗率１
-								<div class="progress" style="height: 30px;">
-									<div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">25%</div>
-								</div>
-							</div>
-						</div><!--/.row-->
-					</div><!--/.container-->
 					
-					<section class="c3">
+						<div class="container">
+							<div class="row">
+								<div class="col-sm-12 col-4">
+								全体進捗率
+									<div class="progress" style="height: 30px;">
+										<div class="progress-bar" role="progressbar" style="width: 0%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">0%</div>
+									</div>
+								</div>
+							</div><!--/.row-->
+						</div><!--/.container-->
+						<div class="container">
+							<div class="row">
+								<div class="col-sm-12 col-4">
+								遺品の整理（４項目）
+									<div class="progress" style="height: 30px;">
+										<div class="progress-bar" role="progressbar" style="width: 0%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">0%</div>
+									</div>
+								</div>
+							</div><!--/.row-->
+						</div><!--/.container-->
+					
+					
 						<div class="container">
 							<div class="row">
 								<div class="col-sm-1 col-0">
 
 								</div>
 								<div class="box2 col-sm-4 col-4">
-									<p><input type="checkbox" name="zyunbi01" value="2">テキスト</p>　
+									<p><input type="checkbox" name="zyunbi01" value="2">不用品等の片づけ</p>　
 								</div>
 								<div class="col-sm-1 col-0">
 
 								</div>
 								<div class="box2 col-sm-4 col-4">
-									<p><input type="checkbox" name="zyunbi01" value="2">テキスト</p>　
+									<p><input type="checkbox" name="zyunbi01" value="2">遺品の譲渡先の決定</p>　
 								</div>
 								
 							
@@ -112,13 +110,13 @@
 
 								</div>
 								<div class="box2 col-sm-4 col-4">
-									<p><input type="checkbox" name="zyunbi01" value="2">テキスト</p>　
+									<p><input type="checkbox" name="zyunbi01" value="2">ペットの譲渡先の決定</p>　
 								</div>
 								<div class="col-sm-1 col-0">
 
 								</div>
 								<div class="box2 col-sm-4 col-4">
-									<p><input type="checkbox" name="zyunbi01" value="2">テキスト</p>　
+									<p><input type="checkbox" name="zyunbi01" value="2">デジタルデータの整理</p>　
 								</div>
 								
 							
@@ -128,10 +126,10 @@
 						<div class="container">
 							<div class="row">
 								<div class="col-sm-12 col-4">
-									進捗率２
-									<div class="progress" style="height: 30px;">
-										<div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">25%</div>
-				 					</div>
+								介護・医療（４項目）
+								<div class="progress" style="height: 30px;">
+									<div class="progress-bar" role="progressbar" style="width: 0%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">0%</div>
+									</div>
 								</div>
 							</div><!--/.row-->
 						</div><!--/.container-->
@@ -141,17 +139,203 @@
 
 								</div>
 								<div class="box2 col-sm-4 col-4">
-									<p><input type="checkbox" name="zyunbi01" value="2">テキスト</p>　
+									<p><input type="checkbox" name="zyunbi01" value="2">介護人の決定</p>　
 								</div>
 								<div class="col-sm-1 col-0">
 
 								</div>
 								<div class="box2 col-sm-4 col-4">
-									<p><input type="checkbox" name="zyunbi01" value="2">テキスト</p>　
+									<p><input type="checkbox" name="zyunbi01" value="2">かかりつけの病院の決定</p>　
+								</div>
+							</div><!--/.row-->
+							<div class="row">
+								<div class="col-sm-1 col-0">
+
+								</div>
+								<div class="box2 col-sm-4 col-4">
+									<p><input type="checkbox" name="zyunbi01" value="2">保険の加入</p>　
+								</div>
+								<div class="col-sm-1 col-0">
+
+								</div>
+								<div class="box2 col-sm-4 col-4">
+									<p><input type="checkbox" name="zyunbi01" value="2">自分が望む終末医療の決定</p>　
 								</div>
 							</div><!--/.row-->
 						</div><!--/.container-->
-					</div>
+						<div class="container">
+							<div class="row">
+								<div class="col-sm-12 col-4">
+								葬儀（６項目）
+								<div class="progress" style="height: 30px;">
+									<div class="progress-bar" role="progressbar" style="width: 0%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">0%</div>
+									</div>
+								</div>
+							</div><!--/.row-->
+						</div><!--/.container-->
+						<div class="container">
+							<div class="row">
+								<div class="col-sm-1 col-0">
+
+								</div>
+								<div class="box2 col-sm-4 col-4">
+									<p><input type="checkbox" name="zyunbi01" value="2">葬儀の方法の決定</p>　
+								</div>
+								<div class="col-sm-1 col-0">
+
+								</div>
+								<div class="box2 col-sm-4 col-4">
+									<p><input type="checkbox" name="zyunbi01" value="2">葬儀に呼ぶ人の決定</p>　
+								</div>
+							</div><!--/.row-->
+
+							<div class="row">
+								<div class="col-sm-1 col-0">
+
+								</div>
+								<div class="box2 col-sm-4 col-4">
+									<p><input type="checkbox" name="zyunbi01" value="2">葬儀の予算の用意</p>　
+								</div>
+								<div class="col-sm-1 col-0">
+
+								</div>
+								<div class="box2 col-sm-4 col-4">
+									<p><input type="checkbox" name="zyunbi01" value="2">宗派やお寺等の希望を伝えたか</p>　
+								</div>
+							</div><!--/.row-->
+
+							<div class="row">
+								<div class="col-sm-1 col-0">
+
+								</div>
+								<div class="box2 col-sm-4 col-4">
+									<p><input type="checkbox" name="zyunbi01" value="2">喪主の決定</p>　
+								</div>
+								<div class="col-sm-1 col-0">
+
+								</div>
+								<div class="box2 col-sm-4 col-4">
+									<p><input type="checkbox" name="zyunbi01" value="2">遺影の用意</p>　
+								</div>
+							</div><!--/.row-->
+							
+						</div><!--/.container-->
+						<div class="container">
+							<div class="row">
+								<div class="col-sm-12 col-4">
+								お墓（４項目）
+								<div class="progress" style="height: 30px;">
+									<div class="progress-bar" role="progressbar" style="width: 0%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">0%</div>
+									</div>
+								</div>
+							</div><!--/.row-->
+						</div><!--/.container-->
+						<div class="container">
+							<div class="row">
+								<div class="col-sm-1 col-0">
+
+								</div>
+								<div class="box2 col-sm-4 col-4">
+									<p><input type="checkbox" name="zyunbi01" value="2">供養の方法の決定</p>　
+								</div>
+								<div class="col-sm-1 col-0">
+
+								</div>
+								<div class="box2 col-sm-4 col-4">
+									<p><input type="checkbox" name="zyunbi01" value="2">お墓の管理人の決定</p>　
+								</div>
+							</div><!--/.row-->
+							
+							<div class="row">
+								<div class="col-sm-1 col-0">
+
+								</div>
+								<div class="box2 col-sm-4 col-4">
+									<p><input type="checkbox" name="zyunbi01" value="2">維持費や購入費の用意</p>　
+								</div>
+								<div class="col-sm-1 col-0">
+
+								</div>
+								<div class="box2 col-sm-4 col-4">
+									<p><input type="checkbox" name="zyunbi01" value="2">お墓の購入先の決定</p>　
+								</div>
+							</div><!--/.row-->
+						</div><!--/.container-->
+						<div class="container">
+							<div class="row">
+								<div class="col-sm-12 col-4">
+								お金と住まい（３項目）
+								<div class="progress" style="height: 30px;">
+									<div class="progress-bar" role="progressbar" style="width: 0%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">0%</div>
+									</div>
+								</div>
+							</div><!--/.row-->
+						</div><!--/.container-->
+						<div class="container">
+							<div class="row">
+								<div class="col-sm-1 col-0">
+
+								</div>
+								<div class="box2 col-sm-4 col-4">
+									<p><input type="checkbox" name="zyunbi01" value="2">老後の資金の用意</p>　
+								</div>
+								<div class="col-sm-1 col-0">
+
+								</div>
+								<div class="box2 col-sm-4 col-4">
+									<p><input type="checkbox" name="zyunbi01" value="2">「終のすみか」の決定</p>　
+								</div>
+							</div><!--/.row-->
+							
+							<div class="row">
+								<div class="col-sm-1 col-0">
+
+								</div>
+								<div class="box2 col-sm-4 col-4">
+									<p><input type="checkbox" name="zyunbi01" value="2">不動産の譲渡先の決定</p>　
+								</div>
+								<div class="col-sm-1 col-0">
+							</div><!--/.row-->
+						</div><!--/.container-->
+           			</section>
+					<section class="c3">
+						<div class="container">
+							<div class="row">
+								<div class="col-sm-12 col-4">
+								財産・遺産（３項目）
+								<div class="progress" style="height: 30px;">
+									<div class="progress-bar" role="progressbar" style="width: 0%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">0%</div>
+									</div>
+								</div>
+							</div><!--/.row-->
+						</div><!--/.container-->
+						<div class="container">
+							<div class="row">
+								<div class="col-sm-1 col-0">
+
+								</div>
+								<div class="box2 col-sm-4 col-4">
+									<p><input type="checkbox" name="zyunbi01" value="2">誰にいくら残すのかを決定</p>　
+								</div>
+								<div class="col-sm-1 col-0">
+
+								</div>
+								<div class="box2 col-sm-4 col-4">
+									<p><input type="checkbox" name="zyunbi01" value="2">遺言書の作成</p>　
+								</div>
+							</div><!--/.row-->
+							
+							<div class="row">
+								<div class="col-sm-1 col-0">
+
+								</div>
+								<div class="box2 col-sm-4 col-4">
+									<p><input type="checkbox" name="zyunbi01" value="2">エンディングノートの作成</p>　
+								</div>
+								<div class="col-sm-1 col-0">
+							</div><!--/.row-->
+						</div><!--/.container-->					
+					</section>
 				</div><!--/.inner-->
 			</div><!--/.contents-->
 		</div><!--/.row.usermenubar-->

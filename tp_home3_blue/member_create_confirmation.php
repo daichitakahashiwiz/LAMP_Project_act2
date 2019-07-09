@@ -46,6 +46,7 @@
 	<header id="header"></header>
 
 
+	<form name="form1" action="{$smarty.server.PHP_SELF}" method="post" >
 	<div class="contents">
 		<div class="inner">
 
@@ -64,70 +65,71 @@
 					<table class="ta1">
 						<tr>
 							<th>お名前※</th>
-                            <td>ここに入力内容が入ります</td>
+                            <td><input type="hidden" name="user_name" value="{$smarty.post.user_name|escape}" ></td>
 						</tr>
 						<tr>
 							<th>お名前(カナ)※</th>
-                            <td>ここに入力内容が入ります</td>
+                            <td><input type="hidden" name="user_name_kana" value="{$smarty.post.user_name_kana|escape}" ></td>
 						</tr>
 
 						<!-- style="border :1px solid #eee; font-size :25px;" -->
 						<tr>
 							<th>生年月日</th>
-                            <td>ここに入力内容が入ります</td>
+                            <td><input type="hidden" name="birthday" value="{$smarty.post.birthday|escape}" ></td>
 						</tr>
 
 						<tr>
 							<th>郵便番号※</th>
-                            <td>ここに入力内容が入ります</td>
+                            <td><input type="hidden" name="address_number" value="{$smarty.post.address_number|escape}" ></td>
                         	</tr>
 
 						<tr>
 							<th>都道府県※</th>
-                            <td>ここに入力内容が入ります</td>
+                            <td><input type="hidden" name="prefecture_id" value="{$smarty.post.prefecture_id|escape}" ></td>
 						</tr>
 
 						<tr>
 							<th>市区町村、番地※</th>
-                            <td>ここに入力内容が入ります</td>
+                            <td><input type="hidden" name="address1" value="{$smarty.post.address1|escape}" ></td>
 						</tr>
 
 						<tr>
 							<th>ビル名、マンション名※</th>
-                            <td>ここに入力内容が入ります</td>
+                            <td><input type="hidden" name="address2" value="{$smarty.post.address2|escape}" ></td>
 						</tr>
 
 						<tr>
 							<th>性別※</th>
-                            <td>ここに入力内容が入ります</td>
+                            <td><input type="hidden" name="number_gender" value="{$smarty.post.number_gender|escape}" ></td>
 						</tr>
 
 						<tr>
 							<th>電話番号1※</th>
-						  <td>ここに入力内容が入ります</td>
+						  <td><input type="hidden" name="phone_number1" value="{$smarty.post.phone_number|escape}" ></td>
 						</tr>
 
 						<tr>
-							<th>電話番号2※</th>  <td>ここに入力内容が入ります</td>
+							<th>電話番号2※</th> 
+						    <td><input type="hidden" name="phone_number2" value="{$smarty.post.phone_number2|escape}" ></td>
 						</tr>
 
 						<tr>
 							<th>メールアドレス1※</th>
-                            <td>ここに入力内容が入ります</td>
+                            <td><input type="hidden" name="mail_address1" value="{$smarty.post.mail_address1|escape}" ></td>
 						</tr>
 
 						<tr>
 							<th>メールアドレス2</th>
-                            <td>ここに入力内容が入ります</td>
+                            <td><input type="hidden" name="mail_address2" value="{$smarty.post.mail_address2|escape}" ></td>
 						</tr>
 
 						<tr>
 							<th>パスワード※</th>
-                            <td>ここに入力内容が入ります</td>	</tr>
+                            <td><input type="hidden" name="passward" value="{$smarty.post.passward|escape}" ></td>	</tr>
 
 						<tr>
 							<th>パスワード(再確認)※</th>
-                            <td>ここに入力内容が入ります</td>	</tr>
+                            <td><input type="hidden" name="passward_sai" value="{$smarty.post.passward_sai|escape}" ></td>	</tr>
 
 						<!-- <tr>
 	<th>お問い合わせ詳細※</th>
@@ -149,6 +151,7 @@
 
 		</div>
 	</div>
+	</form>
 
 	<p id="pagetop" class="inner"><a href="#">↑</a></p>
 

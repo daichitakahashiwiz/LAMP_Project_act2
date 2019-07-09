@@ -45,9 +45,9 @@
 						<div class="col-md-6 login-form-2">
 							<h1>ログイン</h1>
 								<form>
-									<div class="alert alert-dismissible alert-danger">
+									<!-- <div class="alert alert-dismissible alert-danger">
 										<strong>メールアドレスまたはパスワードが正しくありません</strong> 
-									</div>
+									</div> -->
 									<div class="form-group">
 										<input type="text" class="form-control" placeholder="メールアドレス*" value="" />
 									</div>
@@ -58,7 +58,7 @@
 										<input type="submit" class="btnSubmit" value="ログイン" />
 									</div>
 									<div class="form-group">
-										<a href="#" class="ForgetPwd" value="Login">パスワードを忘れた方はこちら</a>
+										<a href="login_update.php" class="ForgetPwd" value="Login">パスワードを忘れた方はこちら</a>
 									</div>
 									<div class="form-group">
 											<a href="member_create.php" class="NewPwd" value="Login">新規作成はこちら</a>
