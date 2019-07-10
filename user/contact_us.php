@@ -61,11 +61,13 @@ if(isset($_POST['func'])){
                 //システムに問題のあるエラー
                 $err_flag = 2;
             }
+           
         case 'conf':
             if(!paramchk()){
                 $_POST['func'] = 'edit';
                 $err_flag = 1;
             }
+            
         break;
         case 'edit':
             //戻るボタン。
@@ -149,6 +151,11 @@ function paramchk(){
     if(ccontentsutil::chkset_err_field($err_array,'c_mail_sai','メールアドレス2','isset_mail1')){
         $retflg = false;
     }
+    if($_POST['c_mail'] != $_POST['c_mail_sai']){
+        $err_array['c_mail_sai'] = "項目「メールアドレス」と入力内容が異なります";
+        $retflg = false;
+    }
+    ///お問い合わせ内容の存在と空白チェック
     if(ccontentsutil::chkset_err_field($err_array,'c_q','お問い合わせ内容','isset_nl')){
         $retflg = false;
     }
@@ -298,6 +305,80 @@ function assign_prefecture_rows(){
 }
 
 
+//--------------------------------------------------------------------------------------
+/*!
+@brief  メールの送信
+@return なし
+*/
+//--------------------------------------------------------------------------------------
+function send_mail_job(){
+    $Subject = 'test';
+$BaseMessage=<<<END_BLOCK
+メンバーデータが更新されました
+
+【更新日時】
+<!--date-->
+
+【更新メンバー】
+<!--member_name-->
+
+
+【更新管理者】
+<!--admin_name-->
+
+
+以上
+END_BLOCK;
+
+
+    $date_data = date('Y/m/d H:i:s');
+    // $BaseMessage = str_replace('<!--date-->',$date_data,$BaseMessage);
+    // $BaseMessage = str_replace('<!--member_name-->',$_POST['member_name'],$BaseMessage);
+    // $BaseMessage = str_replace('<!--admin_name-->',$_SESSION['tmY2019_adm']['admin_name'],$BaseMessage);
+
+     $Message = '';//$BaseMessage;
+    //通常はFromは管理者メルアドを設定する
+    //あるいは送信元メルアドをPOSTから得る
+     $Headers = "From: " . 'rikuriku8150@gmail.com' . "\r\n";
+     $Headers .= "Content-Type: text/plain;";
+     $Message .= ($_POST['c_q']) . "\r\n";
+    //通常は$Toは管理者メルアドを設定する
+    //つまり「管理者」から「管理者」に送るメールとして送信する
+     $To = 'ase17410039@wiz.ac.jp';
+/*
+メール送信は実際に送信する前に、何度もデバッグをすべきである
+そのため、以下のデバッグロジックを実装しておいて、確認の上、コメントにする
+*/
+
+
+$debugstr=<<<END_BLOCK
+<br />///////メールデバッグここから/////////<br />
+<br />送信されるタイトル<br />
+{$Subject}
+<br />本文メッセージ<br />
+{$Message}
+<br />ヘッダ<br />
+{$Headers}
+<br />送信先<br />
+{$To}
+<br />
+<br />/////////メールデバッグここまで//////////<br />
+
+END_BLOCK;
+
+
+// echo $debugstr;
+// exit;
+
+
+   //本番送信
+//改行が2重になる場合は以下行を生かす
+//$Message = str_replace("\r","",$Message);
+//以下のコメントを外すときは慎重に
+
+	mb_send_mail($To, $Subject, $Message, $Headers);
+
+}
 
 /////////////////////////////////////////////////////////////////
 /// 関数呼び出しブロック
@@ -321,30 +402,26 @@ if(isset($_POST['func']) && $_POST['func'] == 'conf'){
         $button = '追加';
     }
     $smarty->assign('button',$button);
-    mb_language("Japanese");
-    mb_internal_encoding("UTF-8");
-    $to = 'ase17410039@wiz.ac.jp ';
-    $title = $_POST['c_name'];
-    $content = $_POST['c_q'];
-    if(mb_send_mail('ase17410039@wiz.ac.jp ', $title, $content)){
-      echo "メールを送信しました";
-    } else {
-      echo "メールの送信に失敗しました";
-    };
+    
+   
+
     $smarty->display('admin/contact_us_confirmation.tmpl');
     
    
     
     
-}
-else{
-    // if($_POST['c_name'] == ""){
-    //     $fff = 1;
-    //     $smarty->display('admin/contact_us.tmpl');
-    // }else{
-    //     $fff = 0;
-    //     $smarty->display('admin/index.tmpl');
-    // }
+}else if(isset($_POST['param']) && $_POST['param'] == 'r'){
+    //header('Location: admin/index.php/');
+    //header("location: index.php");
+    send_mail_job();
+    $smarty->display('admin/contact_us_end.tmpl');
+
+}else if(isset($_POST['param']) && $_POST['param'] == 'h'){
+    //header('Location: admin/index.php/');
+    header("location: index.php");
+    //$smarty->display('admin/index.tmpl');
+
+}else{
     $smarty->display('admin/contact_us.tmpl');
 
 }

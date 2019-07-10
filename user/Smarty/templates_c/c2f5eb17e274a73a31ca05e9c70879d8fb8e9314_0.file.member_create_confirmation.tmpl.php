@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2019-07-09 12:29:09
+/* Smarty version 3.1.33, created on 2019-07-10 14:26:52
   from '/home/tmD2019/public_html/user/Smarty/templates/admin/member_create_confirmation.tmpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5d240a059e6646_47096472',
+  'unifunc' => 'content_5d25771cda5af8_87618565',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'c2f5eb17e274a73a31ca05e9c70879d8fb8e9314' => 
     array (
       0 => '/home/tmD2019/public_html/user/Smarty/templates/admin/member_create_confirmation.tmpl',
-      1 => 1562640656,
+      1 => 1562736336,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:./../../../html/include/footer.tmpl' => 1,
   ),
 ),false)) {
-function content_5d240a059e6646_47096472 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5d25771cda5af8_87618565 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html lang="ja">
@@ -42,6 +42,7 @@ function content_5d240a059e6646_47096472 (Smarty_Internal_Template $_smarty_tpl)
 	<?php echo '<script'; ?>
  type="text/javascript" src="js/styleswitcher.js"><?php echo '</script'; ?>
 >
+	<link rel="icon" type="image/vnd.microsoft.icon" href="./images/favicon.png">
 
 	<!-- jQueryの呼び出し -->
 	<?php echo '<script'; ?>
@@ -58,6 +59,7 @@ function content_5d240a059e6646_47096472 (Smarty_Internal_Template $_smarty_tpl)
 >
 	<!-- css,jsの呼び出し -->
 	<link type="text/css" href="./css/import.css" rel="stylesheet" media="all" />
+	
 	<?php echo '<script'; ?>
  type="text/javascript" src="./js/app.js"><?php echo '</script'; ?>
 >
@@ -66,15 +68,7 @@ function content_5d240a059e6646_47096472 (Smarty_Internal_Template $_smarty_tpl)
  src="https://kit.fontawesome.com/a1bcba65a0.js"><?php echo '</script'; ?>
 >
 	<!-- HTMLの呼び出し -->
-	<?php echo '<script'; ?>
->
-		$(function () {
-			$("#header").load("./html/include/header.html");
-			// $("#main").load("html/main.html");
-			$("#footer").load("./html/include/footer.html");
-		});
-	<?php echo '</script'; ?>
->
+	
 	<style>
 		a.index {
 			background: #2b3f7f;
@@ -99,8 +93,10 @@ function set_func_form(fn,pm){
 
 </head>
 <body>
-<header id="header"> <?php $_smarty_tpl->_subTemplateRender('file:./../../../html/include/header.tmpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
-?> </header>
+<header id="header">
+	<?php $_smarty_tpl->_subTemplateRender('file:./../../../html/include/header.tmpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+?>
+</header>
 
 
 	<div class="contents">
@@ -242,7 +238,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 
 						<tr>
 							<th>パスワード※</th>
-							<td><strong><?php echo htmlspecialchars($_POST['passward'], ENT_QUOTES, 'UTF-8', true);?>
+							<td><strong type="passeord"><?php echo htmlspecialchars($_POST['passward'], ENT_QUOTES, 'UTF-8', true);?>
 </strong>
 							<input type="hidden" name="passward" size="30" class="ws" value="<?php echo htmlspecialchars($_POST['passward'], ENT_QUOTES, 'UTF-8', true);?>
 " ></td>
@@ -250,7 +246,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 
 						<tr>
 							<th>パスワード(再確認)※</th>
-							<td><strong><?php echo htmlspecialchars($_POST['passward_sai'], ENT_QUOTES, 'UTF-8', true);?>
+							<td><strong type="passeord"><?php echo htmlspecialchars($_POST['passward_sai'], ENT_QUOTES, 'UTF-8', true);?>
 </strong>
 							<input type="hidden" name="passward_sai" size="30" class="ws" value="<?php echo htmlspecialchars($_POST['passward_sai'], ENT_QUOTES, 'UTF-8', true);?>
 " ></td>
@@ -260,8 +256,6 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 	<td><textarea name="お問い合わせ詳細" cols="30" rows="10" class="wl"></textarea></td>
 	</tr> -->
 					</table>
-
-					
 					<input type="hidden" name="func" value="" />
 <input type="hidden" name="param" value="" />
 <input type="hidden" name="member_id" value="<?php echo $_smarty_tpl->tpl_vars['member_id']->value;?>
@@ -271,7 +265,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                            
 							<input type="button"  value="戻る" onClick="javascript:set_func_form('edit','')"/>&nbsp;
 							<input type="button"  value="<?php echo $_smarty_tpl->tpl_vars['button']->value;?>
-" onClick="javascript:set_func_form('set','')"/>
+" onClick="javascript:set_func_form('set','r')" href="./index.php"/>
                     </p>            
                        
 
@@ -289,8 +283,10 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 
 
 
-	<footer id="footer"> <?php $_smarty_tpl->_subTemplateRender('file:./../../../html/include/footer.tmpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
-?> </footer>
+	<footer id="footer">
+		<?php $_smarty_tpl->_subTemplateRender('file:./../../../html/include/footer.tmpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+?>
+	</footer>
 
 	<!--メニュー開閉ボタン-->
 	<div id="menubar_hdr" class="close"></div>

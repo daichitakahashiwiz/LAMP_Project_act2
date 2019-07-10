@@ -488,6 +488,174 @@ class cuser extends crecord {
 user.prefecture_id = prefecture.prefecture_id");    //条件
         return $this->fetch_assoc();
     }
+    //--------------------------------------------------------------------------------------
+    /*!
+    @brief  葬儀の情報取得をするクラス
+    @brief  指定されたIDの配列を得る
+    @param[in]  $debug  デバッグ出力をするかどうか
+    @param[in]  $id     ID
+    @return 配列（1次元配列になる）空の場合はfalse
+    */
+    //--------------------------------------------------------------------------------------
+    public function get_tgt_sougi($debug,$id){
+        if(!cutil::is_number($id)
+        ||  $id < 1){
+            //falseを返す
+            return false;
+        }
+        //親クラスのselect()メンバ関数を呼ぶ
+        $this->select(
+            $debug,         //デバッグ表示するかどうか
+            "user.sougi_id",          //取得するカラム
+            "user,sougi_mt,",    //取得するテーブル
+            "user.user_id ='{$id}'and 
+user.sougi_id = sougi_mt.sougi_mt_id");    //条件
+        return $this->fetch_assoc();
+    }
+    //--------------------------------------------------------------------------------------
+    /*!
+    @brief  プランの情報取得をするクラス
+    @brief  指定されたIDの配列を得る
+    @param[in]  $debug  デバッグ出力をするかどうか
+    @param[in]  $id     ID
+    @return 配列（1次元配列になる）空の場合はfalse
+    */
+    //--------------------------------------------------------------------------------------
+    public function get_tgt_plan($debug,$id){
+        if(!cutil::is_number($id)
+        ||  $id < 1){
+            //falseを返す
+            return false;
+        }
+        //親クラスのselect()メンバ関数を呼ぶ
+        $this->select(
+            $debug,         //デバッグ表示するかどうか
+            "user.plan_id",          //取得するカラム
+            "user,plan_mt,",    //取得するテーブル
+            "user.user_id ='{$id}'and 
+user.plan_id = plan_mt.plan_id");    //条件
+        return $this->fetch_assoc();
+    }
+    //--------------------------------------------------------------------------------------
+    /*!
+    @brief  プラン1の情報取得をするクラス
+    @brief  指定されたIDの配列を得る
+    @param[in]  $debug  デバッグ出力をするかどうか
+    @param[in]  $id     ID
+    @return 配列（1次元配列になる）空の場合はfalse
+    */
+    //--------------------------------------------------------------------------------------
+    public function get_tgt_plan1($debug,$id){
+        if(!cutil::is_number($id)
+        ||  $id < 1){
+            //falseを返す
+            return false;
+        }
+        //親クラスのselect()メンバ関数を呼ぶ
+        $this->select(
+            $debug,         //デバッグ表示するかどうか
+            "user.plan_id1",          //取得するカラム
+            "user,plan_mt,",    //取得するテーブル
+            "user.user_id ='{$id}'and 
+user.plan_id1 = plan_mt.plan_id1");    //条件
+        return $this->fetch_assoc();
+    }
+    //--------------------------------------------------------------------------------------
+    /*!
+    @brief  プラン2の情報取得をするクラス
+    @brief  指定されたIDの配列を得る
+    @param[in]  $debug  デバッグ出力をするかどうか
+    @param[in]  $id     ID
+    @return 配列（1次元配列になる）空の場合はfalse
+    */
+    //--------------------------------------------------------------------------------------
+    public function get_tgt_plan2($debug,$id){
+        if(!cutil::is_number($id)
+        ||  $id < 1){
+            //falseを返す
+            return false;
+        }
+        //親クラスのselect()メンバ関数を呼ぶ
+        $this->select(
+            $debug,         //デバッグ表示するかどうか
+            "user.plan_id2",          //取得するカラム
+            "user,plan_mt,",    //取得するテーブル
+            "user.user_id ='{$id}'and 
+user.plan_id2 = plan_mt.plan_id2");    //条件
+        return $this->fetch_assoc();
+    }
+    //--------------------------------------------------------------------------------------
+    /*!
+    @brief  プラン3の情報取得をするクラス
+    @brief  指定されたIDの配列を得る
+    @param[in]  $debug  デバッグ出力をするかどうか
+    @param[in]  $id     ID
+    @return 配列（1次元配列になる）空の場合はfalse
+    */
+    //--------------------------------------------------------------------------------------
+    public function get_tgt_plan3($debug,$id){
+        if(!cutil::is_number($id)
+        ||  $id < 1){
+            //falseを返す
+            return false;
+        }
+        //親クラスのselect()メンバ関数を呼ぶ
+        $this->select(
+            $debug,         //デバッグ表示するかどうか
+            "user.plan_id3",          //取得するカラム
+            "user,plan_mt,",    //取得するテーブル
+            "user.user_id ='{$id}'and 
+user.plan_id3 = plan_mt.plan_id3");    //条件
+        return $this->fetch_assoc();
+    }
+    //--------------------------------------------------------------------------------------
+    /*!
+    @brief  プラン3の情報取得をするクラス
+    @brief  指定されたIDの配列を得る
+    @param[in]  $debug  デバッグ出力をするかどうか
+    @param[in]  $id     ID
+    @return 配列（1次元配列になる）空の場合はfalse
+    */
+    //--------------------------------------------------------------------------------------
+    public function get_tgt_plan4($debug,$id){
+        if(!cutil::is_number($id)
+        ||  $id < 1){
+            //falseを返す
+            return false;
+        }
+        //親クラスのselect()メンバ関数を呼ぶ
+        $this->select(
+            $debug,         //デバッグ表示するかどうか
+            "user.plan_id4",          //取得するカラム
+            "user,plan_mt,",    //取得するテーブル
+            "user.user_id ='{$id}'and 
+user.plan_id4 = plan_mt.plan_id4");    //条件
+        return $this->fetch_assoc();
+    }
+    //--------------------------------------------------------------------------------------
+    /*!
+    @brief  プラン3の情報取得をするクラス
+    @brief  指定されたIDの配列を得る
+    @param[in]  $debug  デバッグ出力をするかどうか
+    @param[in]  $id     ID
+    @return 配列（1次元配列になる）空の場合はfalse
+    */
+    //--------------------------------------------------------------------------------------
+    public function get_tgt_plan5($debug,$id){
+        if(!cutil::is_number($id)
+        ||  $id < 1){
+            //falseを返す
+            return false;
+        }
+        //親クラスのselect()メンバ関数を呼ぶ
+        $this->select(
+            $debug,         //デバッグ表示するかどうか
+            "user.plan_id5",          //取得するカラム
+            "user,plan_mt,",    //取得するテーブル
+            "user.user_id ='{$id}'and 
+user.plan_id5 = plan_mt.plan_id5");    //条件
+        return $this->fetch_assoc();
+    }
 //--------------------------------------------------------------------------------------
     /*!
     @brief  指定されたログインの配列を得る
@@ -505,6 +673,62 @@ user.prefecture_id = prefecture.prefecture_id");    //条件
             "mail_address1 = '{$id}'"    //条件
         );
         return $this->fetch_assoc();
+    }
+    //--------------------------------------------------------------------------------------
+    /*!
+    @brief  既にあるメールアドレス１のカラムデータを持ってくる
+    @param[in]  $debug  デバッグ出力をするかどうか
+    @param[in]  $from   抽出開始行
+    @param[in]  $limit  抽出数
+    @return 配列（2次元配列になる）
+    */
+    //--------------------------------------------------------------------------------------
+    //$limit
+    public function get_all_mail1($debug){
+        $arr = array();
+        //親クラスのselect()メンバ関数を呼ぶ
+        $this->select(
+            $debug,         //デバッグ表示するかどうか
+            "user.mail_address1", //取得するカラム
+            "user",    //取得するテーブル
+            //"1", //条件
+            "user.user_id asc" //並び替え
+            //"limit " . $from . "," . $limit     //抽出開始行と抽出数
+        );
+        //順次取り出す
+        while($row = $this->fetch_assoc()){
+            $arr[] = $row;
+        }
+        //取得した配列を返す
+        return $arr;
+    }
+    //--------------------------------------------------------------------------------------
+    /*!
+    @brief  既にあるメールアドレス2のカラムデータを持ってくる
+    @param[in]  $debug  デバッグ出力をするかどうか
+    @param[in]  $from   抽出開始行
+    @param[in]  $limit  抽出数
+    @return 配列（2次元配列になる）
+    */
+    //--------------------------------------------------------------------------------------
+    //$limit
+    public function get_all_mail2($debug){
+        $arr = array();
+        //親クラスのselect()メンバ関数を呼ぶ
+        $this->select(
+            $debug,         //デバッグ表示するかどうか
+            "user.mail_address2", //取得するカラム
+            "user",    //取得するテーブル
+            //"1", //条件
+            "user.user_id asc" //並び替え
+            //"limit " . $from . "," . $limit     //抽出開始行と抽出数
+        );
+        //順次取り出す
+        while($row = $this->fetch_assoc()){
+            $arr[] = $row;
+        }
+        //取得した配列を返す
+        return $arr;
     }
 }
 

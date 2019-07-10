@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2019-07-09 14:37:44
+/* Smarty version 3.1.33, created on 2019-07-10 09:33:34
   from '/home/tmD2019/public_html/user/Smarty/templates/admin/u_check.tmpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5d242828442fc5_64759059',
+  'unifunc' => 'content_5d25325ed72964_25624755',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '8e7f8582728fce420172b597f9e076bfeb796cb8' => 
     array (
       0 => '/home/tmD2019/public_html/user/Smarty/templates/admin/u_check.tmpl',
-      1 => 1562650643,
+      1 => 1562683019,
       2 => 'file',
     ),
   ),
@@ -23,7 +23,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:./../../../html/include/footer.tmpl' => 1,
   ),
 ),false)) {
-function content_5d242828442fc5_64759059 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5d25325ed72964_25624755 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -42,6 +42,8 @@ function content_5d242828442fc5_64759059 (Smarty_Internal_Template $_smarty_tpl)
 		<?php echo '<script'; ?>
  type="text/javascript" src="js/styleswitcher.js"><?php echo '</script'; ?>
 >
+		<link rel="icon" type="image/vnd.microsoft.icon" href="./images/favicon.png">
+
 		<!-- jQueryの呼び出し -->
 		<?php echo '<script'; ?>
  src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"><?php echo '</script'; ?>
@@ -65,13 +67,14 @@ function content_5d242828442fc5_64759059 (Smarty_Internal_Template $_smarty_tpl)
  src="https://kit.fontawesome.com/a1bcba65a0.js"><?php echo '</script'; ?>
 >
 		<!-- HTMLの呼び出し -->
-		<?php echo '<script'; ?>
+		<!-- <?php echo '<script'; ?>
 >
 				$(function () {
-				
+					$("#header").load("./html/include/header.html");
+					$("#footer").load("./html/include/footer.html");
 				});
 		<?php echo '</script'; ?>
->
+> -->
 		<style>
 				a.user,a.check{
 					background: #2b3f7f;

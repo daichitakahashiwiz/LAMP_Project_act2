@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2019-07-10 14:03:14
-  from '/home/tmD2019/public_html/user/Smarty/templates/admin/contact_us.tmpl' */
+/* Smarty version 3.1.33, created on 2019-07-10 14:03:37
+  from '/home/tmD2019/public_html/user/Smarty/templates/admin/contact_us_end.tmpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5d2571922f50f2_82531419',
+  'unifunc' => 'content_5d2571a91c2c47_67896926',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
-    '1f2cc0d14b8fa64f4e6b973a76b7da9054a0a36b' => 
+    '350131b7ee4db66989bc68bc8687cb4dd768748c' => 
     array (
-      0 => '/home/tmD2019/public_html/user/Smarty/templates/admin/contact_us.tmpl',
-      1 => 1562734983,
+      0 => '/home/tmD2019/public_html/user/Smarty/templates/admin/contact_us_end.tmpl',
+      1 => 1562733488,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:./../../../html/include/footer.tmpl' => 1,
   ),
 ),false)) {
-function content_5d2571922f50f2_82531419 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5d2571a91c2c47_67896926 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="ja">
 
@@ -100,55 +100,41 @@ function set_func_form(fn,pm){
                 	<form name="form1" action="<?php echo $_SERVER['PHP_SELF'];?>
 " method="post" >
 
-                    <h2>お問い合わせ</h2>
-                    <!-- <p>当ページと同じ３項目のお問い合わせフォーム（自動フォーム試用版）を簡単に使えるようにセットしています。<br>
-	<span style="color: red;">※当ページ（contact.html）はフォームの見本ページです。実際の自動フォームには使いませんのでご注意下さい。</span></p>
-	<p><strong class="color1">■自動フォームを使う場合（※編集に入る前にご確認下さい）</strong><br>
-	あなたのメールアドレス設定と、簡単な編集だけで使えます。<a href="http://template-party.com/file/formgen_manual_set2.html" target="_blank">こちらのマニュアルをご覧下さい。</a></p>
-	<p><strong class="color1">■自動フォームを使わない場合</strong><br>
-	テンプレートに梱包されている「form.html」「confirm.html」「finish.html」の3枚のファイルを削除して下さい。</p> -->
+                   
+			<div class="container">
+				<div class="row">
+					<div class="col">
+						<div class="list text-center unsubscribedone mx-0 my-0 mt-5">
+							<h4>お問い合わせが送信されました！</h4>
+							<p>ご入力いただいたメールアドレスにお問い合わせに関する回答を送信させていただきます</p>
+                            <p>しばらくお待ちください</p>
+						</div>
+					</div>
 
-                    <table class="ta1">
-                        <tr>
-                            <th>お名前※</th>
-                            <td><input type="text" name="c_name" size="30" class="ws" value="<?php echo htmlspecialchars($_POST['c_name'], ENT_QUOTES, 'UTF-8', true);?>
-">
-							<?php if (isset($_smarty_tpl->tpl_vars['err_array']->value['c_name'])) {?><br /><span style="color: #FF0000; "><?php echo $_smarty_tpl->tpl_vars['err_array']->value['c_name'];?>
-</span><?php }?></td>
-                        </tr>
-                        <tr>
-                            <th>メールアドレス※</th>
-                           <td><input type="text" name="c_mail" size="30" class="ws" value="<?php echo htmlspecialchars($_POST['c_mail'], ENT_QUOTES, 'UTF-8', true);?>
-">
-							<?php if (isset($_smarty_tpl->tpl_vars['err_array']->value['c_mail'])) {?><br /><span style="color: #FF0000; "><?php echo $_smarty_tpl->tpl_vars['err_array']->value['c_mail'];?>
-</span><?php }?></td>
-                        </tr>
-                        <tr>
-                            <th>メールアドレス(再確認)※</th>
-                          <td><input type="text" name="c_mail_sai" size="30" class="ws" value="<?php echo htmlspecialchars($_POST['c_mail_sai'], ENT_QUOTES, 'UTF-8', true);?>
-">
-							<?php if (isset($_smarty_tpl->tpl_vars['err_array']->value['c_mail_sai'])) {?><br /><span style="color: #FF0000; "><?php echo $_smarty_tpl->tpl_vars['err_array']->value['c_mail_sai'];?>
-</span><?php }?></td>
-                        </tr>
-                        <tr>
-                            <th>お問い合わせ内容※</th>
-                            <td><textarea name="c_q" cols="30" rows="10" class="wl" ><?php echo htmlspecialchars($_POST['c_q'], ENT_QUOTES, 'UTF-8', true);?>
-</textarea>
-                            <?php if (isset($_smarty_tpl->tpl_vars['err_array']->value['c_q'])) {?><br /><span style="color: #FF0000; "><?php echo $_smarty_tpl->tpl_vars['err_array']->value['c_q'];?>
-</span><?php }?></td>
-                        </tr>
-                    </table>
+				</div>
+				<!--/.row-->
+
+			</div>
+			<!--/.container-->
+		
                     <input type="hidden" name="func" value="" />
                     <input type="hidden" name="param" value="" />
                     <input type="hidden" name="member_id" value="<?php echo $_smarty_tpl->tpl_vars['member_id']->value;?>
 " />
-
-
-
+<input type="hidden" name="c_name" value="<?php echo htmlspecialchars($_POST['c_name'], ENT_QUOTES, 'UTF-8', true);?>
+" ></td>
+<input type="hidden" name="c_mail" value="<?php echo htmlspecialchars($_POST['c_mail'], ENT_QUOTES, 'UTF-8', true);?>
+" ></td>
+<input type="hidden" name="c_mail_sai" value="<?php echo htmlspecialchars($_POST['c_mail_sai'], ENT_QUOTES, 'UTF-8', true);?>
+" ></td>
+<input type="hidden" name="c_q" value="<?php echo htmlspecialchars($_POST['c_q'], ENT_QUOTES, 'UTF-8', true);?>
+" ></td>
 
 
                    <p class="c">
-							<input type="button" value="内容を確認する" class="btn" onClick="javascript:set_func_form('conf','')">
+                   <br>
+                   <br>
+							<input type="button" value="ホームに戻る" class="btn" onClick="javascript:set_func_form('set','h')">
 					</p>
 
 

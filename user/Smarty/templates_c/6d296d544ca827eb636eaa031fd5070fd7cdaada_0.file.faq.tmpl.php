@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2019-07-08 15:30:46
+/* Smarty version 3.1.33, created on 2019-07-10 09:33:43
   from '/home/tmD2019/public_html/user/Smarty/templates/admin/faq.tmpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5d22e316ec22f5_38257943',
+  'unifunc' => 'content_5d253267b06b65_07312320',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '6d296d544ca827eb636eaa031fd5070fd7cdaada' => 
     array (
       0 => '/home/tmD2019/public_html/user/Smarty/templates/admin/faq.tmpl',
-      1 => 1562567440,
+      1 => 1562683780,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:./../../../html/include/footer.tmpl' => 1,
   ),
 ),false)) {
-function content_5d22e316ec22f5_38257943 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5d253267b06b65_07312320 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="ja">
 
@@ -42,6 +42,7 @@ function content_5d22e316ec22f5_38257943 (Smarty_Internal_Template $_smarty_tpl)
 	<?php echo '<script'; ?>
  type="text/javascript" src="js/styleswitcher.js"><?php echo '</script'; ?>
 >
+	<link rel="icon" type="image/vnd.microsoft.icon" href="./images/favicon.png">
 
 	<!-- jQueryの呼び出し -->
 	<?php echo '<script'; ?>

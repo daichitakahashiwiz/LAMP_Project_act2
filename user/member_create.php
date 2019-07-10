@@ -14,7 +14,7 @@ require_once("inc_base.php");
 require_once($CMS_COMMON_INCLUDE_DIR . "libs.php");
 require_once("inc_smarty.php");
 //以下はセッション管理用のインクルード
-//require_once($CMS_COMMON_INCLUDE_DIR . "auth_user.php");
+require_once($CMS_COMMON_INCLUDE_DIR . "auth_user.php");
 
 $member_id = 0;
 $err_array = array();
@@ -156,11 +156,11 @@ function paramchk(){
     /// メールアドレス2の住所の存在と空白チェック
     if(ccontentsutil::chkset_err_field($err_array,'mail_address2','メールアドレス2','isset_mail2')){
         $retflg = false;
-         //パラメーターチェック
-         if('mail_address1' == 'mail_address2'){
-            $err_array['mail_address2'] = "項目「メールアドレス2」はすでで入力された内容です";
-            $retflg = false;
-        }
+    }
+    /// メールアドレスの重複チェック１
+    if($_POST['mail_address1'] == $_POST['mail_address2']){
+        $err_array['mail_address2'] = "項目「メールアドレス1」と入力内容が重複しています";
+        $retflg = false;
     }
     /// 誕生日の存在と空白チェック
     if(ccontentsutil::chkset_err_field($err_array,'birthday','誕生日','isset_nl')){
@@ -189,21 +189,24 @@ function paramchk(){
      /// 電話番号2の存在と空白チェック
     if(ccontentsutil::chkset_err_field($err_array,'phone_number2','電話番号2','isset_tel')){
         $retflg = false;
-         //パラメーターチェック
-         if('phone_number1' == 'phone_number2'){
-            $err_array['phone_number2'] = "項目「電話番号1」はすでに入力された内容です";
-            $retflg = false;
-        }
+    }
+    /// 電話番号の重複チェック１
+    if($_POST['phone_number1'] == $_POST['phone_number2']){
+        $err_array['phone_number2'] = "項目「電話番号1」と入力内容が重複しています";
+        $retflg = false;
     }
      /// パスワードの存在と空白チェック
     if(ccontentsutil::chkset_err_field($err_array,'passward','パスワード','isset_pass')){
         $retflg = false;
     }
-     /// パスワードの再確認の存在と空白チェック
-     if(ccontentsutil::chkset_err_field($err_array,'passward_sai','パスワードの再確認','isset_pass')){
+    /// パスワードの再確認の存在と空白チェック
+    if(ccontentsutil::chkset_err_field($err_array,'passward_sai','パスワードの再確認','isset_pass')){
         $retflg = false;
-    }else{
-        
+    }
+    /// パスワードチェック
+    if($_POST['passward'] != $_POST['passward_sai']){
+        $err_array['passward_sai'] = "項目「パスワード」と入力内容が異なります";
+        $retflg = false;
     }
     // //パラメーターチェック
     // if('passward' != 'passward_sai'){
@@ -374,6 +377,7 @@ assign_member_id_txt();
 assign_prefecture_rows();
 $smarty->assign('err_array',$err_array);
 
+
 //Smartyを使用した表示(テンプレートファイルの指定)
 if(isset($_POST['func']) && $_POST['func'] == 'conf'){
     $button = '更新';
@@ -381,16 +385,27 @@ if(isset($_POST['func']) && $_POST['func'] == 'conf'){
         $button = '追加';
     }
     $smarty->assign('button',$button);
+    
+   
+
     $smarty->display('admin/member_create_confirmation.tmpl');
-}
-else{
-    if($_POST['user_name'] == ""){
-        $fff = 1;
-        $smarty->display('admin/member_create.tmpl');
-    }else{
-        $fff = 0;
-        $smarty->display('admin/index.tmpl');
-    }
+    
+   
+    
+    
+}else if(isset($_POST['param']) && $_POST['param'] == 'r'){
+    //header('Location: admin/index.php/');
+    //header("location: index.php");
+    send_mail_job();
+    $smarty->display('admin/contact_us_end.tmpl');
+
+}else if(isset($_POST['param']) && $_POST['param'] == 'h'){
+    //header('Location: admin/index.php/');
+    header("location: index.php");
+    //$smarty->display('admin/index.tmpl');
+
+}else{
+    $smarty->display('admin/member_create.tmpl');
 
 }
 ?>

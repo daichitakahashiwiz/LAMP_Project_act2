@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2019-07-10 00:19:53
+/* Smarty version 3.1.33, created on 2019-07-10 14:43:07
   from '/home/tmD2019/public_html/user/Smarty/templates/admin/member_create.tmpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5d24b0994be543_92773821',
+  'unifunc' => 'content_5d257aeb7316a9_29541031',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '6f737b2070ae90028345faabb8c6404cd1da7b2f' => 
     array (
       0 => '/home/tmD2019/public_html/user/Smarty/templates/admin/member_create.tmpl',
-      1 => 1562683580,
+      1 => 1562737356,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:./../../../html/include/footer.tmpl' => 1,
   ),
 ),false)) {
-function content_5d24b0994be543_92773821 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5d257aeb7316a9_29541031 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -41,7 +41,6 @@ function content_5d24b0994be543_92773821 (Smarty_Internal_Template $_smarty_tpl)
 	<?php echo '<script'; ?>
  type="text/javascript" src="js/styleswitcher.js"><?php echo '</script'; ?>
 >
-	<link rel="icon" type="image/vnd.microsoft.icon" href="./images/favicon.png">
 
 	<!-- jQueryの呼び出し -->
 	<?php echo '<script'; ?>
@@ -58,6 +57,7 @@ function content_5d24b0994be543_92773821 (Smarty_Internal_Template $_smarty_tpl)
 >
 	<!-- css,jsの呼び出し -->
 	<link type="text/css" href="./css/import.css" rel="stylesheet" media="all" />
+	
 	<?php echo '<script'; ?>
  type="text/javascript" src="./js/app.js"><?php echo '</script'; ?>
 >
@@ -78,6 +78,43 @@ function set_func_form(fn,pm){
 	document.form1.submit();
 }
 // -->
+
+jQuery(function($) {
+  var showText = "伏字にせず入力";
+  var hideText = "　伏字で入力　";
+
+  $(':password').each(function() {
+    var pwdCtrl = $(this); // パスワードの入力コントロール
+    var textCtrl = $('<input/>').attr("name", pwdCtrl.attr("name")); // パスワード入力欄を形式のみtextにして複製
+
+    /* コントロール形式を password / text の交互に切り替えるボタン */
+    var typeConvertButton = $('<button type="button"/>').text(showText).bind("click", function() {
+      if (pwdCtrl.parent().length > 0) {
+        // textコントロールを有効にしてフォーカス、passwordコントロールは無効にする
+        $(this).text(hideText);
+        pwdCtrl.replaceWith(textCtrl); // textコントロールに置換
+        textCtrl.val(pwdCtrl.val());
+        textCtrl.focus();
+      } else {
+        // passwordコントロールを有効にしてフォーカス、textコントロールは無効にする
+        $(this).text(showText);
+        textCtrl.replaceWith(pwdCtrl); // passwordコントロールに置換
+        pwdCtrl.val(textCtrl.val());
+        pwdCtrl.focus();
+      }
+    });
+
+    pwdCtrl.before(typeConvertButton); // コントロール切り替えボタンを挿入
+
+    /* フォームを提出する際、変換したtextコントロールをpasswordに戻す */
+    pwdCtrl.closest("form").bind("submit", function() {
+      if (pwdCtrl.parent().length === 0) {
+        textCtrl.replaceWith(pwdCtrl); // passwordコントロールに置換
+        pwdCtrl.val(textCtrl.val());
+      }
+    });
+  });
+});
 <?php echo '</script'; ?>
 >
 
@@ -114,17 +151,17 @@ function set_func_form(fn,pm){
 					
 						<tr>
 							<th>お名前※</th>
-							<td> 姓 <input type="text" name="user_name" size="15" value="<?php echo htmlspecialchars($_POST['user_name'], ENT_QUOTES, 'UTF-8', true);?>
+							<td> 姓 <input type="text" name="user_name" size="30" value="<?php echo htmlspecialchars($_POST['user_name'], ENT_QUOTES, 'UTF-8', true);?>
 ">
-							<?php if (isset($_smarty_tpl->tpl_vars['err_array']->value['user_name'])) {?><br /><span class="red"><?php echo $_smarty_tpl->tpl_vars['err_array']->value['user_name'];?>
+							<?php if (isset($_smarty_tpl->tpl_vars['err_array']->value['user_name'])) {?><br /><span style="color: #FF0000; "><?php echo $_smarty_tpl->tpl_vars['err_array']->value['user_name'];?>
 </span><?php }?>
 							</td>
 						</tr>
 						<tr>
 							<th>お名前(カナ)※</th>
-							<td> カナ <input type="text" name="user_name_kana" size="15"value="<?php echo htmlspecialchars($_POST['user_name_kana'], ENT_QUOTES, 'UTF-8', true);?>
+							<td> カナ <input type="text" name="user_name_kana" size="30"value="<?php echo htmlspecialchars($_POST['user_name_kana'], ENT_QUOTES, 'UTF-8', true);?>
 "> 
-							<?php if (isset($_smarty_tpl->tpl_vars['err_array']->value['user_name_kana'])) {?><br /><span class="red"><?php echo $_smarty_tpl->tpl_vars['err_array']->value['user_name_kana'];?>
+							<?php if (isset($_smarty_tpl->tpl_vars['err_array']->value['user_name_kana'])) {?><br /><span style="color: #FF0000; "><?php echo $_smarty_tpl->tpl_vars['err_array']->value['user_name_kana'];?>
 </span><?php }?>
 							</td>
 						</tr>
@@ -134,25 +171,25 @@ function set_func_form(fn,pm){
 						
 						
 						<tr>
-							<th>生年月日</th>
+							<th>生年月日※</th>
 							<td><input type="date" name="birthday"  value="<?php echo htmlspecialchars($_POST['birthday'], ENT_QUOTES, 'UTF-8', true);?>
 " >
-							<?php if (isset($_smarty_tpl->tpl_vars['err_array']->value['birthday'])) {?><br /><span class="red"><?php echo $_smarty_tpl->tpl_vars['err_array']->value['birthday'];?>
+							<?php if (isset($_smarty_tpl->tpl_vars['err_array']->value['birthday'])) {?><br /><span style="color: #FF0000; "><?php echo $_smarty_tpl->tpl_vars['err_array']->value['birthday'];?>
 </span><?php }?></td>
 						</tr>
 
 						<tr>
 							<th>郵便番号※</th>
-							<td><input type="text" name="address_number" size="10" maxlength="7" value="<?php echo htmlspecialchars($_POST['address_number'], ENT_QUOTES, 'UTF-8', true);?>
+							<td><input type="text" name="address_number" size="15" maxlength="7" value="<?php echo htmlspecialchars($_POST['address_number'], ENT_QUOTES, 'UTF-8', true);?>
 " >
-							<?php if (isset($_smarty_tpl->tpl_vars['err_array']->value['address_number'])) {?><br /><span class="red"><?php echo $_smarty_tpl->tpl_vars['err_array']->value['address_number'];?>
+							<?php if (isset($_smarty_tpl->tpl_vars['err_array']->value['address_number'])) {?><br /><span style="color: #FF0000; "><?php echo $_smarty_tpl->tpl_vars['err_array']->value['address_number'];?>
 </span><?php }?></td>
 						</tr>
 
 						
 						
 						<tr>
-<th>都道府県<span class="red">＊</span></th>
+<th>都道府県<span class="red">※</span></th>
 <td width="70%">
 <select name="prefecture_id">
 <option value="0" >選択してください</option>
@@ -173,15 +210,15 @@ if ($_smarty_tpl->tpl_vars['value']->value['prefecture_id'] == $_POST['prefectur
 }
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 </select>
-<?php if (isset($_smarty_tpl->tpl_vars['err_array']->value['prefecture_id'])) {?><br /><span class="red"><?php echo $_smarty_tpl->tpl_vars['err_array']->value['prefecture_id'];?>
+<?php if (isset($_smarty_tpl->tpl_vars['err_array']->value['prefecture_id'])) {?><br /><span style="color: #FF0000; "><?php echo $_smarty_tpl->tpl_vars['err_array']->value['prefecture_id'];?>
 </span><?php }?>
 </td>
 </tr>
 						<tr>
 							<th>市区町村、番地※</th>
-							<td><input type="text" name="address1" size="40" class="ws" value="<?php echo htmlspecialchars($_POST['address1'], ENT_QUOTES, 'UTF-8', true);?>
+							<td><input type="text" name="address1" size="30" class="ws" value="<?php echo htmlspecialchars($_POST['address1'], ENT_QUOTES, 'UTF-8', true);?>
 ">
-							<?php if (isset($_smarty_tpl->tpl_vars['err_array']->value['address1'])) {?><br /><span class="red"><?php echo $_smarty_tpl->tpl_vars['err_array']->value['address1'];?>
+							<?php if (isset($_smarty_tpl->tpl_vars['err_array']->value['address1'])) {?><br /><span style="color: #FF0000; "><?php echo $_smarty_tpl->tpl_vars['err_array']->value['address1'];?>
 </span><?php }?></td>
 						</tr>
 
@@ -189,50 +226,50 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 							<th>ビル名、マンション名</th>
 							<td><input type="text" name="address2" size="30" class="ws" value="<?php echo htmlspecialchars($_POST['address2'], ENT_QUOTES, 'UTF-8', true);?>
 " >
-							<?php if (isset($_smarty_tpl->tpl_vars['err_array']->value['address2'])) {?><br /><span class="red"><?php echo $_smarty_tpl->tpl_vars['err_array']->value['address2'];?>
+							<?php if (isset($_smarty_tpl->tpl_vars['err_array']->value['address2'])) {?><br /><span style="color: #FF0000; "><?php echo $_smarty_tpl->tpl_vars['err_array']->value['address2'];?>
 </span><?php }?></td>
 						</tr>
 
 						<tr>
-<th>性別<span class="red">＊</span></th>
+<th>性別<span class="red">※</span></th>
 <td width="70%">
 <input type="radio" name="member_gender" value="1" <?php if ($_POST['member_gender'] == 1) {?>checked="checked"<?php }?> />男性&nbsp;
 <input type="radio" name="member_gender" value="2" <?php if ($_POST['member_gender'] == 2) {?>checked="checked"<?php }?> />女性
-<?php if (isset($_smarty_tpl->tpl_vars['err_array']->value['member_gender'])) {?><br /><span class="red"><?php echo $_smarty_tpl->tpl_vars['err_array']->value['member_gender'];?>
+<?php if (isset($_smarty_tpl->tpl_vars['err_array']->value['member_gender'])) {?><br /><span style="color: #FF0000; "><?php echo $_smarty_tpl->tpl_vars['err_array']->value['member_gender'];?>
 </span><?php }?>
 </td>
 </tr>
 
 						<tr>
 							<th>電話番号1※</th>
-							<td><input type="text" name="phone_number1" size="4"value="<?php echo htmlspecialchars($_POST['phone_number1'], ENT_QUOTES, 'UTF-8', true);?>
+							<td><input type="text" name="phone_number1" size="30"value="<?php echo htmlspecialchars($_POST['phone_number1'], ENT_QUOTES, 'UTF-8', true);?>
 " >
-							<?php if (isset($_smarty_tpl->tpl_vars['err_array']->value['phone_number1'])) {?><br /><span class="red"><?php echo $_smarty_tpl->tpl_vars['err_array']->value['phone_number1'];?>
+							<?php if (isset($_smarty_tpl->tpl_vars['err_array']->value['phone_number1'])) {?><br /><span style="color: #FF0000; "><?php echo $_smarty_tpl->tpl_vars['err_array']->value['phone_number1'];?>
 </span><?php }?></td>
 						</tr>
 
 						<tr>
-							<th>電話番号2※</th>
-							<td><input type="text" name="phone_number2" size="4"  value="<?php echo htmlspecialchars($_POST['phone_number2'], ENT_QUOTES, 'UTF-8', true);?>
+							<th>電話番号2</th>
+							<td><input type="text" name="phone_number2" size="30"  value="<?php echo htmlspecialchars($_POST['phone_number2'], ENT_QUOTES, 'UTF-8', true);?>
 " >
-							<?php if (isset($_smarty_tpl->tpl_vars['err_array']->value['phone_number2'])) {?><br /><span class="red"><?php echo $_smarty_tpl->tpl_vars['err_array']->value['phone_number2'];?>
+							<?php if (isset($_smarty_tpl->tpl_vars['err_array']->value['phone_number2'])) {?><br /><span style="color: #FF0000; "><?php echo $_smarty_tpl->tpl_vars['err_array']->value['phone_number2'];?>
 </span><?php }?></td>
 						</tr>
 
 						<tr>
 							<th>メールアドレス1※</th>
-							<td><input type="text" name="mail_address1" size="20"  value="<?php echo htmlspecialchars($_POST['mail_address1'], ENT_QUOTES, 'UTF-8', true);?>
+							<td><input type="text" name="mail_address1" size="30"  value="<?php echo htmlspecialchars($_POST['mail_address1'], ENT_QUOTES, 'UTF-8', true);?>
 " >
-							<?php if (isset($_smarty_tpl->tpl_vars['err_array']->value['mail_address1'])) {?><br /><span class="red"><?php echo $_smarty_tpl->tpl_vars['err_array']->value['mail_address1'];?>
+							<?php if (isset($_smarty_tpl->tpl_vars['err_array']->value['mail_address1'])) {?><br /><span style="color: #FF0000; "><?php echo $_smarty_tpl->tpl_vars['err_array']->value['mail_address1'];?>
 </span><?php }?>
 							</td>
 						</tr>
 
 						<tr>
 							<th>メールアドレス2</th>
-							<td><input type="text" name="mail_address2" size="20" value="<?php echo htmlspecialchars($_POST['mail_address2'], ENT_QUOTES, 'UTF-8', true);?>
+							<td><input type="text" name="mail_address2" size="30" value="<?php echo htmlspecialchars($_POST['mail_address2'], ENT_QUOTES, 'UTF-8', true);?>
 ">
-							<?php if (isset($_smarty_tpl->tpl_vars['err_array']->value['mail_address2'])) {?><br /><span class="red"><?php echo $_smarty_tpl->tpl_vars['err_array']->value['mail_address2'];?>
+							<?php if (isset($_smarty_tpl->tpl_vars['err_array']->value['mail_address2'])) {?><br /><span style="color: #FF0000; "><?php echo $_smarty_tpl->tpl_vars['err_array']->value['mail_address2'];?>
 </span><?php }?>
 							</td>
 						</tr>
@@ -241,7 +278,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 							<th>パスワード※</th>
 							<td><input type="password" name="passward" size="30" class="ws" value="<?php echo htmlspecialchars($_POST['passward'], ENT_QUOTES, 'UTF-8', true);?>
 " >
-							<?php if (isset($_smarty_tpl->tpl_vars['err_array']->value['passward'])) {?><br /><span class="red"><?php echo $_smarty_tpl->tpl_vars['err_array']->value['passward'];?>
+							<?php if (isset($_smarty_tpl->tpl_vars['err_array']->value['passward'])) {?><br /><span style="color: #FF0000; "><?php echo $_smarty_tpl->tpl_vars['err_array']->value['passward'];?>
 </span><?php }?></td>
 						</tr>
 
@@ -249,7 +286,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 							<th>パスワード(再確認)※</th>
 							<td><input type="password" name="passward_sai" size="30" class="ws" value="<?php echo htmlspecialchars($_POST['passward_sai'], ENT_QUOTES, 'UTF-8', true);?>
 " >
-							<?php if (isset($_smarty_tpl->tpl_vars['err_array']->value['passward_sai'])) {?><br /><span class="red"><?php echo $_smarty_tpl->tpl_vars['err_array']->value['passward_sai'];?>
+							<?php if (isset($_smarty_tpl->tpl_vars['err_array']->value['passward_sai'])) {?><br /><span style="color: #FF0000; "><?php echo $_smarty_tpl->tpl_vars['err_array']->value['passward_sai'];?>
 </span><?php }?></td>
 		
 						</tr>

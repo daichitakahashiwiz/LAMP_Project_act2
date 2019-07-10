@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2019-07-09 15:48:38
+/* Smarty version 3.1.33, created on 2019-07-10 14:03:35
   from '/home/tmD2019/public_html/user/Smarty/templates/admin/contact_us_confirmation.tmpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5d2438c6af9894_04560972',
+  'unifunc' => 'content_5d2571a7057de5_00722831',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '29ee2afb691375f6437793b5c590fbfdb944fb81' => 
     array (
       0 => '/home/tmD2019/public_html/user/Smarty/templates/admin/contact_us_confirmation.tmpl',
-      1 => 1562654873,
+      1 => 1562733484,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:./../../../html/include/footer.tmpl' => 1,
   ),
 ),false)) {
-function content_5d2438c6af9894_04560972 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5d2571a7057de5_00722831 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="ja">
 
@@ -58,6 +58,7 @@ function content_5d2438c6af9894_04560972 (Smarty_Internal_Template $_smarty_tpl)
 >
     <!-- css,jsの呼び出し -->
     <link type="text/css" href="./css/import.css" rel="stylesheet" media="all" />
+    
     <?php echo '<script'; ?>
  type="text/javascript" src="./js/app.js"><?php echo '</script'; ?>
 >
@@ -153,7 +154,8 @@ function set_func_form(fn,pm){
                      
                            
 							<input type="button"  value="戻る" onClick="javascript:set_func_form('edit','')"/>&nbsp;
-							<input type="button"  value="送信" onClick="javascript:set_func_form('set','')" href="./index.php"/>
+							<input type="button"  value="送信" onClick="javascript:set_func_form('set','r')"/>
+                           
                     </p>            
                         </form>
 
